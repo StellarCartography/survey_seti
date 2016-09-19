@@ -1,14 +1,69 @@
 %\documentclass[]{openjournal}
-\documentclass[iop]{emulateapj}
+\documentclass[manuscript, letterpaper]{aastex6}
+\bibliographystyle{aasjournal}
 
 \bibliographystyle{apj}
 \usepackage{graphicx}
 \usepackage[suffix=]{epstopdf}
-\usepackage[export]{adjustbox}
 \usepackage{natbib}
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage{xspace}
+
+
+% from here: https://github.com/dfm/peerless/blob/master/document/ms.tex#L19-L69
+% ----------------------------------- %
+% start of AASTeX mods by DWH and DFM %
+% ----------------------------------- %
+
+\setlength{\voffset}{0in}
+\setlength{\hoffset}{0in}
+\setlength{\textwidth}{6in}
+\setlength{\textheight}{9in}
+\setlength{\headheight}{0ex}
+\setlength{\headsep}{\baselinestretch\baselineskip} % this is 2 lines in ``manuscript''
+\setlength{\footnotesep}{0in}
+\setlength{\topmargin}{-\headsep}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+
+\linespread{0.54} % close to 10/13 spacing in ``manuscript''
+\setlength{\parindent}{0.54\baselineskip}
+\hypersetup{colorlinks = false}
+\makeatletter % you know you are living your life wrong when you need to do this
+\long\def\frontmatter@title@above{
+\vspace*{-\headsep}\vspace*{\headheight}
+\noindent\footnotesize
+{\noindent\footnotesize\textsc{\@journalinfo}}\par
+{\noindent\scriptsize Preprint typeset using \LaTeX\ style AASTeX6\\
+With modifications by David W. Hogg and Daniel Foreman-Mackey
+}\par\vspace*{-\baselineskip}\vspace*{0.625in}
+}%
+\makeatother
+
+% Section spacing:
+\makeatletter
+\let\origsection\section
+\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
+\newcommand\nostarsection[1]{\sectionprelude\origsection{#1}}
+\newcommand\starsection[1]{\sectionprelude\origsection*{#1}}
+\newcommand\sectionprelude{\vspace{1em}}
+\let\origsubsection\subsection
+\renewcommand\subsection{\@ifstar{\starsubsection}{\nostarsubsection}}
+\newcommand\nostarsubsection[1]{\subsectionprelude\origsubsection{#1}}
+\newcommand\starsubsection[1]{\subsectionprelude\origsubsection*{#1}}
+\newcommand\subsectionprelude{\vspace{1em}}
+\makeatother
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\sloppy\sloppypar
+
+% ------------------ %
+% end of AASTeX mods %
+% ------------------ %
+
 
 %    Make Scientific Notation
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
@@ -19,18 +74,18 @@
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%
-\title{SETI in the Spatial-Temporal Domain: Spatially Coordinated Transits as an ET Signal}
+\title{SETI in the Spatial-Temporal Domain}
 
 \shorttitle{SETI in the Spatial-Temporal Domain}
-\shortauthors{Davenport et al.}
+\shortauthors{Davenport}
 
 \author{
-	James R. A. Davenport\altaffilmark{1,2,3}
+	James R. A. Davenport\altaffilmark{1,2}
 	}
 
-\altaffiltext{1}{Corresponding author: James.Davenport@wwu.edu}
-\altaffiltext{2}{Department of Physics \& Astronomy, Western Washington University, Bellingham, WA 98225}
-\altaffiltext{3}{NSF Astronomy and Astrophysics Postdoctoral Fellow}
+%\altaffiltext{1}{Corresponding author: James.Davenport@wwu.edu}
+\altaffiltext{1}{Department of Physics \& Astronomy, Western Washington University, Bellingham, WA 98225}
+\altaffiltext{2}{NSF Astronomy and Astrophysics Postdoctoral Fellow}
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,6 +104,9 @@ Previous work has suggested looking for SETI signals from interstellar ``beacons
 However, most such work has been focused on using lasers or other means to out-shine a parent star, often observed using spectroscopy \cite{reines2002}. This is a very expensive way to stand out, and a slow way to find it, and so far has no success in discovering ET laser emission \cite{tellis2015}
 
 
+optical seti
+http://arxiv.org/abs/astro-ph/0506758
+
 Instead, much cheaper to block light, rather than shine it.
 \cite{arnold2005}
 on the feasibility of transits for use in SETI detection, and 
@@ -58,6 +116,12 @@ on the impact of artificial structures on transits. also this work on that:
 recent data from \Kepler \citep{borucki2010}, has found weird transit-like signals
 \cite{boyajian2015}, 
 which some have considered as SETI candidates. However, follow-up observations have yet to yield any confirming signatures, and instead this looks like a YSO w/ comets maybe \citep{lisse2015}.
+
+active and passive SETI in coordination (both temporal and spatial) with galactic events like supernovae 
+\citep{lemarchand1994}
+
+lighthouses
+\citep{zuluaga2015}
 
 
 \cite{arnold2005} note that objects could be placed at interesting spacing along the orbit to encode a pattern or simple message, demonstrating an intelligent origin. However, very little information can be effectively transmitted using eclipses, even with extreme precision in the recovery.
@@ -69,8 +133,12 @@ In this work we propose a new type of beacon system, which relies on ET transit 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Coordinated Transits as ET Beacons}
+\section{Example: Coordinated Transits as ET Beacons}
+imagine a Type N civilization with the ability to both travel to nearby star systems, and to build large enough structures in orbit around other stars to produce a visible transit in our data.
 
+give the detailed example i have thought up.
+
+becons placed at distances
 
 
 \begin{figure}[]
@@ -81,6 +149,8 @@ In this work we propose a new type of beacon system, which relies on ET transit 
 \end{figure}
 
 
+for clarity, this is what the ideal signal might look like on the sky
+
 \begin{figure}[]
 \centering
 \includegraphics[width=3.5in]{../figures/sky_per.png}
@@ -89,16 +159,37 @@ In this work we propose a new type of beacon system, which relies on ET transit 
 \end{figure}
 
 
+%and then what it might look like in 3d, projected in to 2d
+
+
+%%%
+
+this type of beacon network is advantageous because it points directly back towards their home. only a few systems actually need to be transiting from any given line of sight.
+
+NOW THE FULL SIMULATION...
+- computation to do: if had 100 beacons, each placed at random orbital alignment, in 3d sphere around home system.
+- assume G stars, 
+- odds of observing transit of a fixed sized object versus orbital distance... goes down. need that plot to figure out probability. 
+- assume ET places beacons with uniform RADIAL density in 3d space out to some maximum distance (even \# of systems as function of radial distance) in bins of 10pc out to 100 pc (i.e. 10 beacons in each 10pc bin)
+- orbital period is exact for each system, no bins of period
+- do Monte Carlo sim with these parameters to figure out how many transiting systems we'd observe 
+
+---- make the plot for one MC realization of RA,Dec.... open circles for systems with no observed transits, colored for transits
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Predictions for Upcoming Surveys}
+\section{Prospects for Future Surveys}
+
+to get accurate census you need a complete time domain survey at some transit depth sensitivity out to some orbital period. going off our simulation, TESS might work for very short period planets
+
 TESS would be great for this in terms of spatial-temporal coverage. 
 
 LSST very good for finding SETI signals of this geometric style, but not ideal for events requiring such dedicating monitoring
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Summary}
-
+\section{Discussion}
+this kind of distributed network could be very efficient at broadcasting the presence of a civilization. dust clouds could create sufficient "transit" signals, while not affecting orbital dynamics
 
 
 %%%%%%%%%%%%%%%%%
