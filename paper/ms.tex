@@ -1,68 +1,12 @@
-%\documentclass[]{openjournal}
-\documentclass[manuscript, letterpaper]{aastex6}
+\documentclass[modern]{aastex61}
 \bibliographystyle{aasjournal}
 
-\bibliographystyle{apj}
+%\bibliographystyle{apj}
 \usepackage{graphicx}
 \usepackage[suffix=]{epstopdf}
 \usepackage{natbib}
 \usepackage{amsmath}
-\usepackage{url}
 \usepackage{xspace}
-
-
-% from here: https://github.com/dfm/peerless/blob/master/document/ms.tex#L19-L69
-% ----------------------------------- %
-% start of AASTeX mods by DWH and DFM %
-% ----------------------------------- %
-
-\setlength{\voffset}{0in}
-\setlength{\hoffset}{0in}
-\setlength{\textwidth}{6in}
-\setlength{\textheight}{9in}
-\setlength{\headheight}{0ex}
-\setlength{\headsep}{\baselinestretch\baselineskip} % this is 2 lines in ``manuscript''
-\setlength{\footnotesep}{0in}
-\setlength{\topmargin}{-\headsep}
-\setlength{\oddsidemargin}{0.25in}
-\setlength{\evensidemargin}{0.25in}
-
-\linespread{0.54} % close to 10/13 spacing in ``manuscript''
-\setlength{\parindent}{0.54\baselineskip}
-\hypersetup{colorlinks = false}
-\makeatletter % you know you are living your life wrong when you need to do this
-\long\def\frontmatter@title@above{
-\vspace*{-\headsep}\vspace*{\headheight}
-\noindent\footnotesize
-{\noindent\footnotesize\textsc{\@journalinfo}}\par
-{\noindent\scriptsize Preprint typeset using \LaTeX\ style AASTeX6\\
-With modifications by David W. Hogg and Daniel Foreman-Mackey
-}\par\vspace*{-\baselineskip}\vspace*{0.625in}
-}%
-\makeatother
-
-% Section spacing:
-\makeatletter
-\let\origsection\section
-\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
-\newcommand\nostarsection[1]{\sectionprelude\origsection{#1}}
-\newcommand\starsection[1]{\sectionprelude\origsection*{#1}}
-\newcommand\sectionprelude{\vspace{1em}}
-\let\origsubsection\subsection
-\renewcommand\subsection{\@ifstar{\starsubsection}{\nostarsubsection}}
-\newcommand\nostarsubsection[1]{\subsectionprelude\origsubsection{#1}}
-\newcommand\starsubsection[1]{\subsectionprelude\origsubsection*{#1}}
-\newcommand\subsectionprelude{\vspace{1em}}
-\makeatother
-
-\widowpenalty=10000
-\clubpenalty=10000
-
-\sloppy\sloppypar
-
-% ------------------ %
-% end of AASTeX mods %
-% ------------------ %
 
 
 %    Make Scientific Notation
@@ -79,19 +23,20 @@ With modifications by David W. Hogg and Daniel Foreman-Mackey
 \shorttitle{SETI in the Spatial-Temporal Domain}
 \shortauthors{Davenport}
 
-\author{
-	James R. A. Davenport\altaffilmark{1,2}
-	}
 
-%\altaffiltext{1}{Corresponding author: James.Davenport@wwu.edu}
-\altaffiltext{1}{Department of Physics \& Astronomy, Western Washington University, Bellingham, WA 98225}
-\altaffiltext{2}{NSF Astronomy and Astrophysics Postdoctoral Fellow}
- 
+\author{James. R. A. Davenport}
+\affiliation{Department of Physics \& Astronomy, Western Washington University, 516 High St., Bellingham, WA 98225, USA}
+\altaffiliation{NSF Astronomy and Astrophysics Postdoctoral Fellow}
+\affiliation{Department of Astronomy, University of Washington, Seattle, WA 98195, USA}
+\altaffiliation{DIRAC Fellow}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Traditional searches for extraterrestrial intelligence (SETI) focuses on temporal or multi-wavelength studies of single stars to detect transient or excess photon emission from artificial sources. However, the latest generation of synoptic time domain surveys enables a spatial-temporal SETI, where signals originate from resolved sources or multiple stars. Here I propose one such SETI approach, which utilizes exoplanet-like transit signals coordinated around multiple stars to indicate the presence of an interstellar civilization. Artificial planets would act as beacons, being placed in orbit around stars surrounding a home star system. The orbital period of each artificial satellite would be proportional to the distance from the beacon star to the home star system. If the orbital period versus beacon distance relationship was known, the exact location of the home system could be determined via triangulation (or trilateration) from a subset of the transit beacons. Current and future exoplanet surveys may be able to detect such spatially coordinated transits around nearby low-mass stars. Importantly, the spatial-temporal domain deserves increased attention from SETI researchers.
+Traditional searches for extraterrestrial intelligence (SETI) focus on single stars to detect transient or excess photon emission from intelligent sources. However, the latest generation of synoptic time domain surveys enable a spatial-temporal SETI, where signals originate from spatially resolved sources or multiple stars. Here I propose one such SETI approach, which utilizes exoplanet-like transit signals coordinated around multiple stars to indicate the presence of an interstellar civilization. Artificial occulters would act as beacons, being placed in orbit around stars surrounding the central home star system. The orbital period of each artificial satellite would be proportional to the distance from the beacon star to the home star system. If the orbital period versus beacon distance relationship was known, the exact location of the home system could be determined via triangulation (or trilateration) from a subset of the transit beacons. Current and future exoplanet surveys may be able to detect such spatially coordinated transits around nearby low-mass stars.  This example technique highlights the potential of the spatial-temporal domain for SETI researchers.
 \end{abstract}
+
+%\keywords{stars: activity --- stars: low-mass --- planets and satellites: detection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,6 +47,8 @@ In the search for extraterrestrial intelligence (SETI), most approaches focus on
 Previous work has suggested looking for SETI signals from interstellar ``beacons''
 \cite{benford2008}
 However, most such work has been focused on using lasers or other means to out-shine a parent star, often observed using spectroscopy \cite{reines2002}. This is a very expensive way to stand out, and a slow way to find it, and so far has no success in discovering ET laser emission \cite{tellis2015}
+
+
 
 
 optical seti
@@ -119,12 +66,19 @@ which some have considered as SETI candidates. However, follow-up observations h
 
 active and passive SETI in coordination (both temporal and spatial) with galactic events like supernovae 
 \citep{lemarchand1994}
+coordinated times/places, also known as Schelling or Focal points \citep{schelling1960}, are the key to finding people in unknown time/space.
+
 
 lighthouses
 \citep{zuluaga2015}
 
+planets in Earth's transit zone \cite{heller2016}
 
 \cite{arnold2005} note that objects could be placed at interesting spacing along the orbit to encode a pattern or simple message, demonstrating an intelligent origin. However, very little information can be effectively transmitted using eclipses, even with extreme precision in the recovery.
+
+\cite{forgan2017} show a galactic-scale communications network of using transits, but note links in the network are only stable for order $10^5$ years as galactic orbital dynamics move things around
+
+a review of Schelling points from \citet{wright2017}
 
 
 In this work we propose a new type of beacon system, which relies on ET transit signals from multiple stars to collectively ``point'' towards an ET civilization. This system has the advantage of being potentially detectable in the near future via exoplanet searches.
@@ -141,25 +95,16 @@ give the detailed example i have thought up.
 becons placed at distances
 
 
-\begin{figure}[]
+\begin{figure*}[]
 \centering
-\includegraphics[width=3.5in]{../figures/dist_per.png}
-\caption{schematic figure of the signal to detect in 1 dimension}
-\label{fig:1d}
-\end{figure}
+\includegraphics[width=2.75in]{../figures/dist_per.pdf}
+\includegraphics[width=2.75in]{../figures/sky_per.pdf}
+\caption{schematic figure of the signal to detect in 2 dimensions. ra,dec in arbitrary units. red circle in middle is the home system}
+\label{fig:2d}
+\end{figure*}
 
 
 for clarity, this is what the ideal signal might look like on the sky
-
-\begin{figure}[]
-\centering
-\includegraphics[width=3.5in]{../figures/sky_per.png}
-\caption{schematic figure of the signal to detect in 2 dimensions. ra,dec in arbitrary units. red circle in middle is the home system}
-\label{fig:2d}
-\end{figure}
-
-
-%and then what it might look like in 3d, projected in to 2d
 
 
 %%%
@@ -176,6 +121,21 @@ NOW THE FULL SIMULATION...
 
 ---- make the plot for one MC realization of RA,Dec.... open circles for systems with no observed transits, colored for transits
 
+\begin{figure}[]
+\centering
+\includegraphics[width=3in]{../figures/3d_model.pdf}
+\caption{the model in 3 dimensions projected into the sky plane. 1000 simulated systems that span the galactic distance of 5-50 pc (blue) with 10 recovered transits highlighted (red). these would be hot Jupiters at the short P end.}
+\label{fig:3d}
+\end{figure}
+
+\begin{figure}[]
+\centering
+\includegraphics[width=3in]{../figures/recov_fraction.pdf}
+\caption{fraction of hot Jupiter-like systems recovered in 1000 realizations of our 1000-star simulation. This curve is dependent on the ratio of the occulter-to-star size, and the orbital period range sampled.
+The average from our model is $10\pm 3$ systems recovered for these parameters.}
+\label{fig:recov}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prospects for Future Surveys}
@@ -191,6 +151,12 @@ LSST very good for finding SETI signals of this geometric style, but not ideal f
 \section{Discussion}
 this kind of distributed network could be very efficient at broadcasting the presence of a civilization. dust clouds could create sufficient "transit" signals, while not affecting orbital dynamics
 
+
+IDEA:
+could improve the efficiency of these beacons if we consider a bit of galactic structure, aligning the median orbital inclinations of the beacon systems with the Galactic plane, and only allowing a smaller range of possible inclinations. How much more efficient would it be if we forced $i<10^\circ$, instead of $i<90^\circ$?
+
+for a million system model w/ 90deg max, 0.46\% total detection efficiency. 
+by constraining the inclination to 10deg max, get 4.3\% detection efficiency of planets. 30deg max gets 1.4\%
 
 %%%%%%%%%%%%%%%%%
 \acknowledgments
