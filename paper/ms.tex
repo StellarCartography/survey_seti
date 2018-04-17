@@ -1,4 +1,4 @@
-\documentclass[modern]{aastex61}
+\documentclass[modern]{aastex62}
 \bibliographystyle{aasjournal}
 
 %\bibliographystyle{apj}
@@ -33,7 +33,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Traditional searches for extraterrestrial intelligence (SETI) focus on single stars to detect transient or excess photon emission from intelligent sources. However, the latest generation of synoptic time domain surveys enable a spatial-temporal SETI, where signals originate from spatially resolved sources or multiple stars. Here I propose one such SETI approach, which utilizes exoplanet-like transit signals coordinated around multiple stars to indicate the presence of an interstellar civilization. Artificial occulters would act as beacons, being placed in orbit around stars surrounding the central home star system. The orbital period of each artificial satellite would be proportional to the distance from the beacon star to the home star system. If the orbital period versus beacon distance relationship was known, the exact location of the home system could be determined via triangulation (or trilateration) from a subset of the transit beacons. Current and future exoplanet surveys may be able to detect such spatially coordinated transits around nearby low-mass stars.  This example technique highlights the potential of the spatial-temporal domain for SETI researchers.
+Traditional searches for extraterrestrial intelligence (SETI) focus on single stars to detect excess or transient emission from intelligent sources. However, the latest generation of synoptic time domain surveys enable a spatial-temporal SETI, where signals originate from spatially resolved sources or multiple stars. Here I propose one such SETI approach, which utilizes exoplanet-like transit signals coordinated around multiple stars to indicate the presence of an interstellar civilization. In this scenario, artificial occulting objects would act as beacons, being placed in orbit around stars surrounding the central home star system. The orbital period of each artificial satellite would be proportional to the distance from the beacon star to the home star system. If the orbital period versus beacon distance relationship was known, the exact location of the home system could be determined via triangulation (or trilateration) from a subset of the transiting beacons seen by an observer. Current and future exoplanet surveys would be able to detect such spatially coordinated transits around nearby low-mass stars. While contrived, this example highlights the need for SETI researchers to consider the spatial-temporal domain.
 \end{abstract}
 
 %\keywords{stars: activity --- stars: low-mass --- planets and satellites: detection}
@@ -42,43 +42,40 @@ Traditional searches for extraterrestrial intelligence (SETI) focus on single st
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-In the search for extraterrestrial intelligence (SETI), most approaches focus on direct detection of photons originating from transmission or waste energy. These searches occur over a range of wavelengths, and require extraterrestrials to produce sufficient radiation to be detected apart from their parent star. While this may be feasible at radio wavelengths, it is much more difficult in the optical regime where much of our time domain surveys operate. However,  it is more simple to block significant light from a star than to produce enough to out shine it, which has led to recent studies of time domain data for signatures of transiting artificial structures. 
-
-Previous work has suggested looking for SETI signals from interstellar ``beacons''
-\cite{benford2008}
-However, most such work has been focused on using lasers or other means to out-shine a parent star, often observed using spectroscopy \cite{reines2002}. This is a very expensive way to stand out, and a slow way to find it, and so far has no success in discovering ET laser emission \cite{tellis2015}
+In the search for extraterrestrial intelligence (SETI), most approaches focus on direct detection of photons originating from transmission or waste energy. These searches occur over a range of wavelength regimes, and assume an extraterrestrial civilization will produce sufficient radiation to be detected apart from their parent star. While this may be feasible at radio wavelengths where Sun-like stars have lower emission, it is much more difficult to outshine the star in the optical regime where many present-day time domain surveys operate. 
 
 
-
-
-optical seti
-http://arxiv.org/abs/astro-ph/0506758
-
-Instead, much cheaper to block light, rather than shine it.
-\cite{arnold2005}
-on the feasibility of transits for use in SETI detection, and 
-\cite{arnold2005a}
+Blocking a significant fraction of light from a star may instead be much easier than outshining it \cite{arnold2005}. This has led to recent searches for transit-like signatures that may have artificial origins. For example, PAPER demonstrated the observable impact of transits by non-spherical objects \cite{arnold2005a}.
 on the impact of artificial structures on transits. also this work on that:
 \cite{wright2016}.
 recent data from \Kepler \citep{borucki2010}, has found weird transit-like signals
 \cite{boyajian2015}, 
 which some have considered as SETI candidates. However, follow-up observations have yet to yield any confirming signatures, and instead this looks like a YSO w/ comets maybe \citep{lisse2015}.
 
+
+Previous work has suggested looking for SETI signals from interstellar ``beacons''
+\cite{benford2008}
+However, most such work has been focused on using lasers or other means to out-shine a parent star, often observed using spectroscopy \cite{reines2002}. This is a very expensive way to stand out, and a slow way to find it, and so far has no success in discovering ET laser emission \cite{tellis2015}
+\cite{arnold2005} note that objects could be placed at interesting spacing along the orbit to encode a pattern or simple message, demonstrating an intelligent origin. However, very little information can be effectively transmitted using eclipses, even with extreme precision in the recovery.
+\cite{forgan2017} show a galactic-scale communications network of using transits, but note links in the network are only stable for order $10^5$ years as galactic orbital dynamics move things around
+
+
+
+%optical seti
+%http://arxiv.org/abs/astro-ph/0506758
+
+
+a review of Schelling points from \citet{wright2017}
+lighthouses \citep{zuluaga2015}
 active and passive SETI in coordination (both temporal and spatial) with galactic events like supernovae 
 \citep{lemarchand1994}
 coordinated times/places, also known as Schelling or Focal points \citep{schelling1960}, are the key to finding people in unknown time/space.
+planets in Earth's transit zone \cite{heller2016} - maybe transits would be aligned for our viewing benefit?
 
 
-lighthouses
-\citep{zuluaga2015}
 
-planets in Earth's transit zone \cite{heller2016}
 
-\cite{arnold2005} note that objects could be placed at interesting spacing along the orbit to encode a pattern or simple message, demonstrating an intelligent origin. However, very little information can be effectively transmitted using eclipses, even with extreme precision in the recovery.
-
-\cite{forgan2017} show a galactic-scale communications network of using transits, but note links in the network are only stable for order $10^5$ years as galactic orbital dynamics move things around
-
-a review of Schelling points from \citet{wright2017}
+{\bf THE POINT: } in this new spatial-temporal domain, we should be looking for things that happen in space, such as over densities of events, or coordination of events like transits.
 
 
 In this work we propose a new type of beacon system, which relies on ET transit signals from multiple stars to collectively ``point'' towards an ET civilization. This system has the advantage of being potentially detectable in the near future via exoplanet searches.
@@ -137,6 +134,35 @@ The average from our model is $10\pm 3$ systems recovered for these parameters.}
 \end{figure}
 
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Searching for Correlated Transits in Kepler}
+we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
+
+we find there is no correlation. Thats OK, but at least we searched
+
+\begin{figure}[]
+\centering
+\includegraphics[width=3in]{../figures/delta_per.png}
+\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
+median period differences are computed for bins of separation distance (orange points).
+there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
+\label{fig:2dcor}
+\end{figure}
+
+
+
+\begin{figure}[]
+\centering
+\includegraphics[width=3in]{../figures/delta_per2.png}
+\caption{correlation between transit periods and projected separations, as in Figure \ref{fig:2dcor}, but emphasizing the smallest separations in both axes. One outlier was identified in the similarity of Kepler 1292b and Kepler 1235b (black circle). However, these two systems are more than 600 pc separated in distance.}
+\label{fig:2dcor2}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prospects for Future Surveys}
 
@@ -161,6 +187,8 @@ by constraining the inclination to 10deg max, get 4.3\% detection efficiency of 
 %%%%%%%%%%%%%%%%%
 \acknowledgments
 JRAD is supported by an NSF Astronomy and Astrophysics Postdoctoral Fellowship under award AST-1501418.
+
+This research has made use of the Exoplanet Orbit Database and the Exoplanet Data Explorer at exoplanets.org.
 
 \bibliography{/Users/james/research/references}
 
