@@ -1,1 +1,1 @@
-# transit-network
+# Survey SETI
