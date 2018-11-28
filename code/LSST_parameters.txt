@@ -1,0 +1,27 @@
+[Search]
+# Please use the default units for the observation parameters and haystack boundaries
+
+# Total integration time for observation [seconds] (10yr * 100 visits/yr * 30 sec/visit)
+time_on_target = 30000
+
+# Max and minimum frequency in the instrument/receiver band [Hertz] (approx bounds of R band)
+max_receiver_band = 5.25e14
+min_receiver_band = 4.28e14
+
+# Survey sensitivity [Jansky] (R=24.5mag, via http://ssc.spitzer.caltech.edu/warmmission/propkit/pet/magtojy/)
+survey_sensitivity = 4.7e-7
+
+# Channel bandwidth (spectral resolution) [Hz] (c / 100nm, FWHM for R band = 3e15Hz... this breaks code)
+channel_bw = 1e14
+
+# Fraction of polarization. 0.5 or 1
+polarization_fraction = 1
+
+# Number of observations (targets) (ignored if skycoverage>0)
+no_of_targets = 692
+
+# The telescope diameter is used to calculate the beam width. Assuming uniformity and diffraction limited. [meters] (ignored if skycoverage>0)
+telescope_diameter = 1.22
+
+# Total Sky Coverage [sq. degrees].
+sky_coverage = 30000
