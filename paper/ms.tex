@@ -33,8 +33,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Traditional searches for extraterrestrial intelligence (SETI) or ``technosignatures'' focus on dedicated observations of single stars or regions in the sky to detect excess or transient emission from intelligent sources. The latest generation of synoptic time domain surveys  enable an entirely new approach: spatial--temporal SETI, where technosignatures may be discovered from spatially resolved sources or multiple stars over time. SETI methodology has not yet fully utilized such surveys, however, and the literature is in need of new search strategies.
-Here I describe the potential for modern wide-field time domain optical surveys to revolutionize our search for technosignatures, and illustrate some new example SETI approaches.
+Traditional searches for extraterrestrial intelligence (SETI) or ``technosignatures'' focus on dedicated observations of single stars or regions in the sky to detect excess or transient emission from intelligent sources. The latest generation of synoptic time domain surveys  enable an entirely new approach: spatial--temporal SETI, where technosignatures may be discovered from spatially resolved sources or multiple stars over time. 
+Current optical time domain surveys such as ZTF and the Evryscope can probe 10--100 times more of the ``Cosmic Haystack'' parameter space than typical radio SETI investigations. Investigations with these surveys can also be conducted at a fraction of the cost, since they require only re-analysis of data already being gathered.
+However, SETI methodology has not widely utilized such surveys, and the literature is in need of new search algorithms that can incorporate signals from both the spatial and temporal domains.
+Here I describe the broad potential for modern wide-field time domain optical surveys to revolutionize our search for technosignatures, and illustrate some new example SETI approaches that utilize the spatial-temporal domain
 \end{abstract}
 
 %Here I propose one such SETI approach, which utilizes exoplanet-like transit signals coordinated around multiple stars to indicate the presence of an interstellar civilization. In this scenario, artificial occulting objects would act as beacons, being placed in orbit around stars surrounding the central home star system. The orbital period of each artificial satellite would be proportional to the distance from the beacon star to the home star system. If the orbital period versus beacon distance relationship was known, the exact location of the home system could be determined via triangulation (or trilateration) from a subset of the transiting beacons seen by an observer. Current and future exoplanet surveys would be able to detect such spatially coordinated transits around nearby low-mass stars. While contrived, this example highlights the need for SETI researchers to consider the spatial-temporal domain.
@@ -60,10 +62,9 @@ While \citet{wright2018c} suggest the completeness of our search of the ``cosmic
 Surveys like the currently running Zwicky Transient Facility \citep[ZTF][]{bellm2014} and the upcoming Large Synoptic Survey Telescope \citep[LSST][]{lsst} will also be transformative in enabling both reproducible and cost-efficient SETI. By developing search strategies that utilize public survey databases and real-time ``alert streams'', both of which are being developed to facilitate a wide range of science goals from these facilities, optical survey SETI can be conducted automatically. As new search algorithms are developed, these databases can be quickly re-analyzed, providing a much-needed level of reproducibility and transparency that will help reduce the ``giggle factor'' stigma for SETI \citep{wright2018b}.
 
 
-The data-driven spatial-temporal domain explored by these surveys necessitates a new generation of SETI approaches be developed. Technosignatures utilizing the spatial-temporal domain could include spatial over-densities of light curve signals and coordinated signals between multiple sources, for example.
-In this paper I provide an overview of the potential for new SETI studies based on time domain surveys. %In \S\ref{sec:surveys} I describe several relevant surveys that are promising data sources for deploying automated SETI algorithms.
-Additionally I describe (two?) examples of signals that could be implemented with these surveys, with the hope that the community will develop additional strategies.
-
+In this paper I explore the potential of wide-field time domain surveys for conducting new technosignature searches. In \S\ref{sec:haystack} I introduce several relevant surveys, and use the ``Cosmic Haystack'' search volume metric developed by \citet{wright2018c} to quantitatively compare these surveys to current radio SETI approaches. 
+The data-driven spatial-temporal domain explored by these surveys necessitates a new generation of SETI approaches be developed. Technosignatures utilizing the spatial-temporal domain could include spatial over-densities of light curve signals and coordinated signals between multiple sources, for example. In \S\ref{sec:transit} I discuss one such signal, where transiting planets around many stars act as a spatially distributed beacon network.
+Finally in \S\ref{sec:discussion} I discuss ideas for other search approaches, and the advantages in cost and reproducibility of conducting SETI with optical time domain surveys.
 
 %Many have noted these new surveys can be used for SETI, such as looking for unusual transits (REFS), and they have the potential to produce viable, repeatable SETI searches from surveys if the techniques can be formed into survey or database queries and therefore run on nearly any survey, such as searching for ``impossible'' patterns or sequences in light curves (e.g. Davenport et al in prep)
 
@@ -111,7 +112,8 @@ Additionally I describe (two?) examples of signals that could be implemented wit
 
 
 %%%%
-\section{A New Domain}
+\section{Comparing Optical Surveys to Radio}
+\label{sec:haystack}
 we need to be looking at big optical surveys, since they provide such amazing sky/time coverage
 
 bright facilities have excellent sky and time coverage:
@@ -135,7 +137,12 @@ parameter space to search:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Example 1: Coordinated Transits as ET Beacons}
+\section{Transits as a Spatial-Temporal Beacon}
+%\section{Example 1: Coordinated Transits as ET Beacons}
+\label{sec:transit}
+
+
+\subsection{Coordinated Transit Networks}
 imagine a Type N civilization with the ability to both travel to nearby star systems, and to build large enough structures in orbit around other stars to produce a visible transit in our data.
 
 give the detailed example i have thought up.
@@ -185,31 +192,40 @@ The average from our model is $10\pm 3$ systems recovered for these parameters.}
 \end{figure}
 
 
+IDEA:
+could improve the efficiency of these beacons if we consider a bit of galactic structure, aligning the median orbital inclinations of the beacon systems with the Galactic plane, and only allowing a smaller range of possible inclinations. How much more efficient would it be if we forced $i<10^\circ$, instead of $i<90^\circ$?
+
+for a million system model w/ 90deg max, 0.46\% total detection efficiency. 
+by constraining the inclination to 10deg max, get 4.3\% detection efficiency of planets. 30deg max gets 1.4\%
+
+
+PROBLEM:
+as \citet{forgan2017} note, an interstellar communications based on transits may only be stable for $\sim$10,000 years due to evolution of planetary orbits and relative motion between stars within the Milky Way. The beacon systems centered around the host system would have to be traveling as a moving group to maintain their respective trilateration signals, or have the transiting bodies actively over time. In other words, as the beacon systems moved relative to the ET host star due to differing Galactic orbits, the semi-major axis of the transiting bodies would have to be adjusted to compensate.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Searching for Correlated Transits in Kepler}
-%we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
-%
-%we find there is no correlation. Thats OK, but at least we searched
-%
-%\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
-%See also TCE histogram in \citet{twicken2016}
-%
-%
-%
-%\begin{figure}[]
-%\centering
-%\includegraphics[width=3in]{../figures/delta_per.png}
-%\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
-%median period differences are computed for bins of separation distance (orange points).
-%there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
-%\label{fig:2dcor}
-%\end{figure}
-%
-%
-%
+%%%%%%%
+\subsection{Searching for Correlated Transits in Kepler}
+we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
+
+we find there is no correlation. Thats OK, but at least we searched
+
+\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
+See also TCE histogram in \citet{twicken2016}
+
+
+
+\begin{figure}[]
+\centering
+\includegraphics[width=3in]{../figures/delta_per.png}
+\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
+median period differences are computed for bins of separation distance (orange points).
+there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
+\label{fig:2dcor}
+\end{figure}
+
+
+
 %\begin{figure}[]
 %\centering
 %\includegraphics[width=3in]{../figures/delta_per2.png}
@@ -219,35 +235,61 @@ The average from our model is $10\pm 3$ systems recovered for these parameters.}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Prospects for Future Surveys}
-
-to get accurate census you need a complete time domain survey at some transit depth sensitivity out to some orbital period. going off our simulation, TESS might work for very short period planets
-
-TESS would be great for this in terms of spatial-temporal coverage. 
-
-LSST very good for finding SETI signals of this geometric style, but not ideal for events requiring such dedicating monitoring
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
-this kind of distributed network could be very efficient at broadcasting the presence of a civilization. dust clouds could create sufficient "transit" signals, while not affecting orbital dynamics
+\label{sec:discussion}
+%
+%to get accurate census you need a complete time domain survey at some transit depth sensitivity out to some orbital period. going off our simulation, TESS might work for very short period planets
+%
+%TESS would be great for this in terms of spatial-temporal coverage. 
+%
+%LSST very good for finding SETI signals of this geometric style, but not ideal for events requiring such dedicating monitoring
+%
+%this kind of distributed network could be very efficient at broadcasting the presence of a civilization. dust clouds could create sufficient "transit" signals, while not affecting orbital dynamics
 
 
-IDEA:
-could improve the efficiency of these beacons if we consider a bit of galactic structure, aligning the median orbital inclinations of the beacon systems with the Galactic plane, and only allowing a smaller range of possible inclinations. How much more efficient would it be if we forced $i<10^\circ$, instead of $i<90^\circ$?
+so far we have focused on the need for developing SETI approaches that utilize the new spatial-temporal domain. The data streams from these surveys also enable many other search strategies that could be implemented. these might include:
+VASCO-type events, stars appearing or disappearing. \citep{villarroel2016}
+	- Esp. stars appearing that do not have a Gaia DR2 detection, for example.
+	- need to account for novae, etc...
+	- stars disappearing will be very interesting
 
-for a million system model w/ 90deg max, 0.46\% total detection efficiency. 
-by constraining the inclination to 10deg max, get 4.3\% detection efficiency of planets. 30deg max gets 1.4\%
+coordination/synchronization \citep{makovetskii1977,shostak2004}
+        - especially the SETI ellipsoid, a'la SN1987A \citep{lemarchand1994}
+        - could use galactic novae to provide time/place
+        - %https://asd.gsfc.nasa.gov/Koji.Mukai/novae/novae.html (new Novae)
+        - %http://www.cbat.eps.harvard.edu/nova_list.html historic Novae (till 2010)
+
+unnaturals patterns of otherwise normal events
+	- look for e.g. flares or novae that recur w/ prime or fibonacci sequences
+	- see forthcoming paper
 
 
+
+
+Surveys like ZTF (and soon LSST) publish real-time alerts of variability from sources. These alert streams could be monitored in real-time for signals as well:
+alerts from the stars within the ``restricted Earth Transit Zone'' \citep{heller2016}
+	- anytime we can see them w/ ZTF
+	- especially at our opposition (i.e. when we transit)
+	- with Gaia we can track stars that are leaving the ETZ as well, but might 
+	have seen us transit previously (or by the time the signal reaches us)
+
+alerts from known exoplanet host systems, especially coinciding with any known transit conjunction (mid-transit), 
+	- allow some tolerance window to account for TTVs
+
+
+
+The cost of deploying such SETI is remarkably low, since they can ``piggyback'' on databases and search tools being developed for the primary science drivers of each survey (e.g. transients for ZTF).
+
+
+%Lastly, we should resist the impulse to try and develop every possible search algorithm to mine this wealth of data for technosignatures. Instead, immediate progress can be made in SETI by deploying robust algorithms to search for specific signals
 
 
 %%%%%%%%%%%%%%%%%
 \acknowledgments
-%JRAD is supported by an NSF Astronomy and Astrophysics Postdoctoral Fellowship under award AST-1501418.
-%
-%This research has made use of the Exoplanet Orbit Database and the Exoplanet Data Explorer at exoplanets.org.
+
+The author thanks Nicholas M. Law and Jason T. Wright for their helpful ongoing conversations in developing this idea, and Andrew P. V. Siemion and the Berkeley SETI Research Center team for hosting me for an enlightening and motivating visit.
 
 JRAD acknowledges support from the DIRAC Institute in the Department of Astronomy at the University of Washington. The DIRAC Institute is supported through generous gifts from the Charles and Lisa Simonyi Fund for Arts and Sciences, and the Washington Research Foundation.
 
