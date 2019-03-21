@@ -25,8 +25,6 @@
 
 
 \author{James. R. A. Davenport}
-%\affiliation{Department of Physics \& Astronomy, Western Washington University, 516 High St., Bellingham, WA 98225, USA}
-%\altaffiliation{NSF Astronomy and Astrophysics Postdoctoral Fellow}
 \affiliation{Department of Astronomy, University of Washington, Seattle, WA 98195, USA}
 \altaffiliation{DIRAC Fellow}
 
@@ -34,7 +32,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 Traditional searches for extraterrestrial intelligence (SETI) or ``technosignatures'' focus on dedicated observations of single stars or regions in the sky to detect excess or transient emission from intelligent sources. The latest generation of synoptic time domain surveys  enable an entirely new approach: spatial--temporal SETI, where technosignatures may be discovered from spatially resolved sources or multiple stars over time. 
-Current optical time domain surveys such as ZTF and the Evryscope can probe 10--100 times more of the ``Cosmic Haystack'' parameter space than typical radio SETI investigations. Investigations with these surveys can also be conducted at a fraction of the cost, since they require only re-analysis of data already being gathered.
+Current optical time domain surveys such as ZTF and the Evryscope can probe 10--100 times more of the ``Cosmic Haystack'' parameter space volume than many radio SETI investigations. Small-aperture, high cadence surveys like Evryscope can be comparable in their Cosmic Haystack volume completeness to deeper surveys including LSST. Investigations with these surveys can also be conducted at a fraction of the cost, since they require only re-analysis of data already being gathered. 
 However, SETI methodology has not widely utilized such surveys, and the literature is in need of new search algorithms that can incorporate signals from both the spatial and temporal domains.
 Here I describe the broad potential for modern wide-field time domain optical surveys to revolutionize our search for technosignatures, and illustrate some new example SETI approaches that utilize the spatial-temporal domain
 \end{abstract}
@@ -62,9 +60,11 @@ While \citet{wright2018c} suggest the completeness of our search of the ``cosmic
 Surveys like the currently running Zwicky Transient Facility \citep[ZTF][]{bellm2014} and the upcoming Large Synoptic Survey Telescope \citep[LSST][]{lsst} will also be transformative in enabling both reproducible and cost-efficient SETI. By developing search strategies that utilize public survey databases and real-time ``alert streams'', both of which are being developed to facilitate a wide range of science goals from these facilities, optical survey SETI can be conducted automatically. As new search algorithms are developed, these databases can be quickly re-analyzed, providing a much-needed level of reproducibility and transparency that will help reduce the ``giggle factor'' stigma for SETI \citep{wright2018b}.
 
 
-In this paper I explore the potential of wide-field time domain surveys for conducting new technosignature searches. In \S\ref{sec:haystack} I introduce several relevant surveys, and use the ``Cosmic Haystack'' search volume metric developed by \citet{wright2018c} to quantitatively compare these surveys to current radio SETI approaches. 
-The data-driven spatial-temporal domain explored by these surveys necessitates a new generation of SETI approaches be developed. Technosignatures utilizing the spatial-temporal domain could include spatial over-densities of light curve signals and coordinated signals between multiple sources, for example. In \S\ref{sec:transit} I discuss one such signal, where transiting planets around many stars act as a spatially distributed beacon network.
-Finally in \S\ref{sec:discussion} I discuss ideas for other search approaches, and the advantages in cost and reproducibility of conducting SETI with optical time domain surveys.
+In this paper I explore the potential of wide-field time domain surveys for conducting a new generation of technosignature searches. 
+In \S\ref{sec:method} I describe the general principle behind technosignature searches in time domain surveys, including spatial over-densities of light curve signals and coordinated signals between multiple sources, for example.
+In \S\ref{sec:haystack} I introduce several relevant surveys, and use the ``Cosmic Haystack'' search volume metric developed by \citet{wright2018c} to quantitatively compare these surveys to current radio SETI approaches. 
+The data-driven spatial-temporal domain explored by these surveys necessitates new SETI approaches be developed, and in \S\ref{sec:transit} I outline an example signal where transiting planets around many stars could act as a spatially distributed beacon network.
+Finally in \S\ref{sec:discussion} I discuss ideas for other search approaches, and the advantages in cost and reproducibility of conducting SETI with current and upcoming optical time domain surveys.
 
 %Many have noted these new surveys can be used for SETI, such as looking for unusual transits (REFS), and they have the potential to produce viable, repeatable SETI searches from surveys if the techniques can be formed into survey or database queries and therefore run on nearly any survey, such as searching for ``impossible'' patterns or sequences in light curves (e.g. Davenport et al in prep)
 
@@ -111,8 +111,17 @@ Finally in \S\ref{sec:discussion} I discuss ideas for other search approaches, a
 %In this work we propose a new type of beacon system, which relies on ET transit signals from multiple stars to collectively ``point'' towards an ET civilization. This system has the advantage of being potentially detectable in the near future via exoplanet searches.
 
 
+
 %%%%
-\section{Comparing Optical Surveys to Radio}
+\section{Optical Survey SETI}
+\label{sec:method}
+METHOD: what is the big idea, in detail
+
+include mantras of "worth doing", "do it almost for free", "portable, do it everywhere", and "outliers are nature papers"
+
+
+%%%%
+\section{Comparing Optical Surveys to Radio Searches}
 \label{sec:haystack}
 we need to be looking at big optical surveys, since they provide such amazing sky/time coverage
 
@@ -135,9 +144,20 @@ parameter space to search:
 - spatially coordinated events
 
 
+\begin{figure*}[]
+\centering
+\includegraphics[width=3.5in]{../figures/optical_haystack}
+\caption{
+comparison of the 8D ``Cosmic Haystack'' volume defined by \citet{wright2018c} using four optical surveys with varying designs.
+}
+\label{fig:hay}
+\end{figure*}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Transits as a Spatial-Temporal Beacon}
+\section{Example: a Spatial-Temporal Transit Beacon}
 %\section{Example 1: Coordinated Transits as ET Beacons}
 \label{sec:transit}
 
