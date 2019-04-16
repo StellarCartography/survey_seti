@@ -61,8 +61,8 @@ While \citet{wright2018c} suggest the completeness of our search of the ``cosmic
 Surveys like the currently running Zwicky Transient Facility \citep[ZTF][]{bellm2014} and the upcoming Large Synoptic Survey Telescope \citep[LSST][]{lsst} will be transformative in enabling both reproducible and cost-efficient SETI. By developing search strategies that utilize public survey databases and real-time ``alert streams'', both of which are being developed to facilitate a wide range of science goals from these facilities, optical survey SETI can be conducted automatically. As new search algorithms are developed, these databases can be quickly re-analyzed, providing a much-needed level of reproducibility and transparency that will help reduce the ``giggle factor'' stigma for SETI \citep{wright2018b}.
 
 
-In this paper I explore the potential for wide-field time domain surveys in conducting a new generation of technosignature searches. 
-In \S\ref{sec:method} I describe the general principles behind technosignature searches in time domain surveys, including spatial over-densities of light curve signals and coordinated signals between multiple sources, for example.
+In this paper I explore the potential for wide-field time domain surveys in conducting a new generation of technosignature searches, starting with an overview of the motivation for doing SETI with optical surveys in \S\ref{sec:method}.
+In \S\ref{sec:strategy} I describe the general principles behind technosignature searches in time domain surveys, including spatial over-densities of light curve signals and coordinated signals between multiple sources, for example.
 In \S\ref{sec:haystack} I introduce several relevant surveys, and use the ``Cosmic Haystack'' search volume metric developed by \citet{wright2018c} to quantitatively compare these surveys to current radio SETI approaches. 
 The data-driven spatial-temporal domain explored by these surveys necessitates new SETI approaches be developed, and in \S\ref{sec:transit} I outline an example signal where transiting planets around many stars could act as a spatially distributed beacon network.
 Finally in \S\ref{sec:discussion} I discuss ideas for other search approaches, and the advantages in cost and reproducibility of conducting SETI with current and upcoming optical time domain surveys.
@@ -130,18 +130,19 @@ The infrastructure needed to conduct technosignature searches with these large o
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Potential Strategies}
+\label{sec:strategy}
 
 SETI with large surveys falls into two basic approaches: 1) classify every object or phenomena in the data, and any remaining outliers are technosignature candidates, or 2) search for specific ``impossible'' or unusual types of signals in the data, which I advocate for in this work. While the latter strategy does not guarantee a complete search for all SETI signals in the data, it is technically feasible for almost any time domain survey. 
 
-\citep{lacki2019} looking for specular reflections of interplanetary objects, particularly in big new surveys
+Several types of signals have been suggested that may be viable for use with optical surveys. For example, \citet{villarroel2016} searched two wide field, single-epoch optical surveys for objects ``disappearing''  over decades timescales. \citet{lacki2019} outline a method to search for specular reflections of interplanetary objects, particularly in wide field surveys. \citet{arnold2005} describe the the observable signature of transits from ostensibly artificial objects, which could be searched for with exoplanet transit surveys.
 
-several kinds of signals have been suggested that may be viable. Here I list a few general classes of technosignature signals that may be well suited for developing detection algorithms around:
+Here I list a few general classes of technosignature signals that may be well suited for developing new detection algorithms around:
 
 \begin{itemize}
-\item unusual variability -- either on short timescales (e.g. Boyajian's Star) or long timescales (e.g. VASCO)
+\item unusual variability profiles or statistical distributions -- either on short timescales (e.g. Boyajian's Star) or long timescales (e.g. VASCO)
 \item spatial correlations of events or phenomena -- e.g. coordination of transiting systems, or rebroadcasting events such as novae along the ``SETI ellipse'' \citep{makovetskii1977,lemarchand1994,tarter2001,shostak2004}
 \item spatial density or distribution -- e.g. an over density of phenomena, such as within the Earth Transit Zone \citep{heller2016}
-\item unnatural patterns, particularly of otherwise normal variability -- e.g. a prime or fibonacci sequence
+\item unnatural patterns, particularly patterns of otherwise normal variability -- e.g. a prime or fibonacci sequence
 \end{itemize}
 
 
