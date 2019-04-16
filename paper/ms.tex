@@ -32,7 +32,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 Traditional searches for extraterrestrial intelligence (SETI) or ``technosignatures'' focus on dedicated observations of single stars or regions in the sky to detect excess or transient emission from intelligent sources. The latest generation of synoptic time domain surveys  enable an entirely new approach: spatial--temporal SETI, where technosignatures may be discovered from spatially resolved sources or multiple stars over time. 
-Current optical time domain surveys such as ZTF and the Evryscope can probe 10--100 times more of the ``Cosmic Haystack'' parameter space volume than many radio SETI investigations. Small-aperture, high cadence surveys like Evryscope can be comparable in their Cosmic Haystack volume completeness to deeper surveys including LSST. Investigations with these surveys can also be conducted at a fraction of the cost, since they require only re-analysis of data already being gathered. 
+Current optical time domain surveys such as ZTF and the Evryscope can probe 10--100 times more of the ``Cosmic Haystack'' parameter space volume than many radio SETI investigations. Small-aperture, high cadence surveys like Evryscope can be comparable in their Cosmic Haystack volume completeness to deeper surveys including LSST. Investigations with these surveys can also be conducted at a fraction of the cost, since they require analysis of data already being gathered. 
 However, SETI methodology has not widely utilized such surveys, and the literature is in need of new search algorithms that can incorporate signals from both the spatial and temporal domains.
 Here I describe the broad potential for modern wide-field time domain optical surveys to revolutionize our search for technosignatures, and illustrate some new example SETI approaches that utilize the spatial-temporal domain
 \end{abstract}
@@ -105,45 +105,60 @@ Finally in \S\ref{sec:discussion} I discuss ideas for other search approaches, a
 %
 
 
-%%%%
-\section{Optical Survey SETI}
+% include mantras of "worth doing", "do it almost for free", "reproducible", "portable, do it everywhere", and "outliers are nature papers"
+
+%%%%%%%%%%%%%%%%
+\section{Why Optical Survey SETI?}
 \label{sec:method}
 
-Wide-field imaging surveys, and their associated infrastructure, are an ideal data source for carrying out technosignature searches that augment efforts in other wavelengths or with different observing strategies. 
-By covering large portions of the night sky with repeated imaging, and with surveys that span years to decades in duration, we can substantially reduce the challenge of deciding {\it when} and {\it where} to look. 
-Increasingly, multiple imaging surveys obtain imaging that overlaps in both time and sky coverage, but with complimentary properties (e.g. imaging depth, cadence, wavelength coverage), which allows for rapid vetting and characterization of rare or low signal-to-noise events.. This also results in survey data providing some ``ground truth'' about the nature of most known objects in our Galaxy (e.g. their positions, temperatures, etc), and allows us to eliminate uncertainty on {\it what} we're searching for technosignatures.
+% The first SETI challenges: WHEN, WHERE, WHAT to search
+Wide-field imaging surveys, and their associated infrastructure, are an ideal data source for carrying out technosignature searches that augment efforts in other wavelengths or with different observing strategies. By covering large portions of the night sky with repeated imaging, and with surveys that span years to decades in duration, we can substantially reduce the challenge of deciding {\it when} and {\it where} to look. Increasingly, multiple surveys obtain imaging that overlaps in both time and sky coverage, but with complimentary properties (e.g. imaging depth, cadence, wavelength coverage), which allows for rapid vetting and characterization of rare or low signal-to-noise events.. This also results in survey data providing some ``ground truth'' about the nature of most known objects in our Galaxy (e.g. their positions, temperatures, etc), and allows us to eliminate uncertainty on {\it what} objects we're studying for SETI.
 
-% Reproducible science
-The large archives of data produced from these surveys become valuable legacies that enable additional science long after data acquisition has concluded. 
-
-Studies for new phenomena in time-domain astronomy can therefore be carried out both in the future with new observations and in the past by re-analyzing survey archives. 
-
-%somrthing about sky surveys \citep{djorgovski2013}
-
-%include mantras of "worth doing", "do it almost for free", "reproducible", "portable, do it everywhere", and "outliers are nature papers"
+% next: HOW to search (can compare approaches, and make them reproducible)
+Optical surveys are also an excellent platform for exploring {\it how} to conduct technosignature searches. The large archives of data produced from these surveys become valuable legacies that enable science long after data acquisition has concluded. Searches for new phenomena in time-domain astronomy can be carried out both in the future with new observations and in the past by re-analyzing survey archives. 
+Using survey archives for SETI as opposed to targeted observations allows us to compare the results of competing algorithms or strategies, and enables reproducible science. Search algorithms are also portable, and ideally can be used to carry out SETI on any appropriately structured large survey.
+As future survey data is gathered, new classes of technosignature signals may be detectable that rely on decades worth of data. 
+Since any candidate technosignature detection will (or should) be the subject of great scrutiny, making the data and algorithms open and reproducible will be critical for comparison and independent validation. 
 
 
-large ground-based surveys, such as LSST, are a highly ranked component of advancement in our current landscape something something
-\citep{astro2010}.
+% DO IT FOR "FREE"
+Large surveys, particularly ground-based efforts like LSST, are a highly prioritized component of the current and future development landscape in astronomy \citep{astro2010}. As such, great efforts are being made to develop survey tools and technologies to enable science from these missions, such as new database technologies \citep{juric2012}. These developments are especially needed to utilize the new forms of data being made available, including real-time data analysis \citep[e.g.][]{schwamb2019} and broadcasting real-time alerts for events \citep{patterson2019}.
+The infrastructure needed to conduct technosignature searches with these large optical surveys is therefore already being developed. As with many areas of astrophysics in the ``survey era'', the biggest restriction to SETI with large surveys is therefore the availability of supported researchers mine the data.
 
-real time tools being developed for LSST \citep{schwamb2019}
 
 
-RNAAS about tools to model technosignatures from radio surveys
-\citep{forgan2019}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Potential Strategies}
+
+SETI with large surveys falls into two basic approaches: 1) classify every object or phenomena in the data, and any remaining outliers are technosignature candidates, or 2) search for specific ``impossible'' or unusual types of signals in the data, which I advocate for in this work. While the latter strategy does not guarantee a complete search for all SETI signals in the data, it is technically feasible for almost any time domain survey. 
 
 \citep{lacki2019} looking for specular reflections of interplanetary objects, particularly in big new surveys
 
+several kinds of signals have been suggested that may be viable. Here I list a few general classes of technosignature signals that may be well suited for developing detection algorithms around:
 
-%%%%
-\section{Comparing Optical Surveys to Radio Searches}
+\begin{itemize}
+\item unusual variability -- either on short timescales (e.g. Boyajian's Star) or long timescales (e.g. VASCO)
+\item spatial correlations of events or phenomena -- e.g. coordination of transiting systems, or rebroadcasting events such as novae along the ``SETI ellipse'' \citep{makovetskii1977,lemarchand1994,tarter2001,shostak2004}
+\item spatial density or distribution -- e.g. an over density of phenomena, such as within the Earth Transit Zone \citep{heller2016}
+\item unnatural patterns, particularly of otherwise normal variability -- e.g. a prime or fibonacci sequence
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%
+\section{Comparing Optical Surveys\\ to Radio Searches}
 \label{sec:haystack}
+
+
+
 we need to be looking at big optical surveys, since they provide such amazing sky/time coverage
 
 bright facilities have excellent sky and time coverage:
 ASAS-SN \citep{kochanek2017}
 
-Evryscope \citep{law2015}
+Evryscope \citep{law2015} is amazing
 
 starting to probe fainter sources becomes a trade off for area and time coverage.
 Zwicky Transient Facility \citep{bellm2014}
@@ -151,28 +166,28 @@ for example surveys the sky every couple nights, but with only a single visit pe
 
 
 space-based platforms designed for exoplanet searches provide very high quality light curves over months to years timescales. The \Kepler and K2 missions \citep{borucki2010,howell2014} produced 30-minute cadence light curves for $\sim$500,000 stars, with baselines ranging from $\sim$3 months up to 4 years. 
-and TESS \citep{tess}, as well as Gaia \citep{gaia} provide incredible precision light curves
+and TESS \citep{tess}, as well as Gaia \citep{gaia} provide incredible precision light curves for millions of stars.
 
 
 
-parameter space to search:
-- spatially coordinated events
+RNAAS about tools to model technosignatures from radio surveys
+\citep{forgan2019}
 
 
-\begin{figure*}[]
+
+\begin{figure}[]
 \centering
 \includegraphics[width=3.5in]{../figures/optical_haystack}
 \caption{
-comparison of the 8D ``Cosmic Haystack'' volume defined by \citet{wright2018c} using four optical surveys with varying designs.
+comparison of the 8D ``Cosmic Haystack'' volume defined by \citet{wright2018c} using four optical surveys with varying designs. 
 }
 \label{fig:hay}
-\end{figure*}
-
+\end{figure}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Example: a Spatial-Temporal Transit Beacon}
+\section{Example: Spatial-Temporal\\ Transit Beacons}
 %\section{Example 1: Coordinated Transits as ET Beacons}
 \label{sec:transit}
 
