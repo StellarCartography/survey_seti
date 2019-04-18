@@ -159,34 +159,46 @@ Here I describe a few general classes of technosignature signals that may be wel
 \citet{wright2018c} have provided a framework to quantify the volume of observable parameter space covered by various SETI projects -- dubbed the ``Cosmic Haystack''. The properties for several major radio SETI projects yield a Haystack volume coverage of $10^{-20}$ to $10^{-18}$, or as \citet{wright2018c} illustrate, akin to a drinking glass of water compared to the volume of Earth's oceans. While this tool was developed with radio surveys in mind, it is broadly applicable to surveys at other wavelengths that are not explicitly designed for SETI \citep[e.g. see][]{forgan2019}.
 
 
-While the potential for optical time domain surveys to advance technosignature searches has been qualitatively laid out in \S\ref{sec:method}, it is useful to quantitatively compare their capability to traditional searches in the radio. 
+While the potential for optical time domain surveys to advance technosignature searches has been qualitatively laid out in \S\ref{sec:method}, it is important to quantitatively compare them to traditional searches in the radio. 
 For typical optical surveys using broadband photometry \citep{djorgovski2013}, the key parameters that determine the Cosmic Haystack volume coverage are the sky coverage ($\Omega$ in sq deg), total integration time per target ($T$ in sec), and survey sensitivity or per-epoch depth ($S$ in Jy).
+Since these terms all act as scalers in the Haystack volume integration, surveys with different properties (e.g. few deep exposures versus many shallow exposures) can have comparably large Haystack coverage, filling out very different portions of the search volume. For maximum impact, SETI should therefore be conducted on many types of surveys.
 %we need to be looking at big optical surveys, since they provide such amazing sky/time coverage
 
-
-Evryscope \citep{law2015} is amazing
-
-starting to probe fainter sources becomes a trade off for area and time coverage.
-Zwicky Transient Facility \citep{bellm2014}
-for example surveys the sky every couple nights, but with only a single visit per source per night.
-
-
-%space-based platforms designed for exoplanet searches provide very high quality light curves over months to years timescales. The \Kepler and K2 missions \citep{borucki2010,howell2014} produced 30-minute cadence light curves for $\sim$500,000 stars, with baselines ranging from $\sim$3 months up to 4 years. 
-and TESS \citep{tess}, as well as Gaia \citep{gaia} provide incredible precision light curves for millions of stars.
-
-
-
-
+As a demonstration, I have computed the Cosmic Haystack volume coverage for five representative current and future optical time domain surveys, as shown in Figure \ref{fig:hay}. This includes the Catalina Real Time Transient Survey \citep[CRTS;][]{catalina}, Zwicky Transient Facility \citep[ZTF;][]{bellm2014}, the Transiting Exoplanet Survey Satellite \citep[TESS;][]{tess}, the Large Synoptic Survey Telescope \citep[LSST;][]{lsst}, and the Evryscope \citep{law2015}. These include space-based and traditional ground-based surveys, and vary greatly in telescope collecting area, total numbers of visits, and survey footprint design. %TESS and Evryscope (abbreviated as ``Evry'' in Figure \ref{fig:hay}) provide 
+I have assumed sensitivity ($S$) is the published per-visit photometric depth for each survey. The total integration time per target ($T$) was computed as the average number of visits per target in the survey multiplied by the per-visit exposure time. The same power of transmitter is assumed as in \citet{wright2018c}. 
+The code to generate the figures in this manuscript is online.\footnote{\url{https://github.com/TheAstroFactory/survey_seti}}
 
 
 \begin{figure}[]
 \centering
 \includegraphics[width=3.5in]{../figures/optical_haystack}
 \caption{
-comparison of the 8D ``Cosmic Haystack'' volume defined by \citet{wright2018c} using five optical surveys with varying designs. 
+comparison of the 8D ``Cosmic Haystack'' volume fraction defined by \citet{wright2018c} using five optical surveys with varying designs. 
 }
 \label{fig:hay}
 \end{figure}
+
+
+Typical values for the Haystack fraction for radio SETI programs as presented in \citet{wright2018c}  are in the range of $\log V_{Haystack} = $ 20 --17. However, these programs are mostly targeted observations of nearby stars. The largest program featured in \citet{wright2018c}, by \citet{tingay2018}, had $\Omega=400$ sq deg and $T=10800$ seconds, and yielded $\log V_{Haystack} =  -17.36$.
+
+By comparison, the wide field optical surveys I have featured all out perform the radio programs explored by \citet{wright2018c} in their Haystack fraction.
+Due to its very wide field coverage, and near continuous monitoring each night, Evryscope ranks as the best optical survey for technosignature searches of those surveyed here. The remarkable similarity in Haystack fraction between Evryscope, which uses 7-cm diameter telescopes, and the 8.4-m LSST survey reinforces the need to sample the Cosmic Haystack volume with as many different survey ``shapes'' as possible.
+
+While \citet{wright2018c} likened their Haystack fraction to searching for fish in a drinking glass of water compared to the Earth's oceans, our results are closer to 1-2 Olympic sized swimming pools (each 2500 m$^3$, according FINA standards) compared to the Earth's oceans\footnote{Calculation done via Wolfram$|$Alpha}. While optical surveys still only cover a tiny fraction of the total volume of parameter space, it is a substantial improvement.
+
+%Evryscope \citep{law2015} is amazing
+%
+%starting to probe fainter sources becomes a trade off for area and time coverage.
+%Zwicky Transient Facility 
+%for example surveys the sky every couple nights, but with only a single visit per source per night.
+%
+
+%space-based platforms designed for exoplanet searches provide very high quality light curves over months to years timescales. The \Kepler and K2 missions \citep{borucki2010,howell2014} produced 30-minute cadence light curves for $\sim$500,000 stars, with baselines ranging from $\sim$3 months up to 4 years. 
+%, as well as Gaia \citep{gaia} provide incredible precision light curves for millions of stars.
+
+
+
+
 
 
 
