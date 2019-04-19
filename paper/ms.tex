@@ -164,7 +164,7 @@ For typical optical surveys using broadband photometry \citep{djorgovski2013}, t
 Since these terms all act as scalers in the Haystack volume integration, surveys with different properties (e.g. few deep exposures versus many shallow exposures) can have comparably large Haystack coverage, filling out very different portions of the search volume. For maximum impact, SETI should therefore be conducted on many types of surveys.
 %we need to be looking at big optical surveys, since they provide such amazing sky/time coverage
 
-As a demonstration, I have computed the Cosmic Haystack volume coverage for five representative current and future optical time domain surveys, as shown in Figure \ref{fig:hay}. This includes the Catalina Real Time Transient Survey \citep[CRTS;][]{catalina}, Zwicky Transient Facility \citep[ZTF;][]{bellm2014}, the Transiting Exoplanet Survey Satellite \citep[TESS;][]{tess}, the Large Synoptic Survey Telescope \citep[LSST;][]{lsst}, and the Evryscope \citep{law2015}. These include space-based and traditional ground-based surveys, and vary greatly in telescope collecting area, total numbers of visits, and survey footprint design. %TESS and Evryscope (abbreviated as ``Evry'' in Figure \ref{fig:hay}) provide 
+As a demonstration, I have computed the Cosmic Haystack volume coverage for five representative current and future optical time domain surveys, as shown in Figure \ref{fig:hay}. This includes the Catalina Real Time Transient Survey \citep[CRTS;][]{catalina}, Zwicky Transient Facility \citep[ZTF;][]{bellm2014}, the Transiting Exoplanet Survey Satellite \citep[TESS;][]{tess}, the Large Synoptic Survey Telescope \citep[LSST;][]{lsst}, and the Evryscope \citep{law2015}. These include space-based and traditional ground-based surveys, and vary greatly in telescope collecting area, total numbers of visits, and survey footprint design. 
 I have assumed sensitivity ($S$) is the published per-visit photometric depth for each survey. The total integration time per target ($T$) was computed as the average number of visits per target in the survey multiplied by the per-visit exposure time. The same power of transmitter is assumed as in \citet{wright2018c}. 
 The code to generate the figures in this manuscript is online.\footnote{\url{https://github.com/TheAstroFactory/survey_seti}}
 
@@ -182,22 +182,9 @@ Evryscope \citet{law2015} is the best survey considered here for SETI work, narr
 Typical values for the Haystack fraction for radio SETI programs as presented in \citet{wright2018c}  are in the range of $\log V_{Haystack} = $ 20 --17. However, these programs are mostly targeted observations of nearby stars. The largest program featured in \citet{wright2018c}, by \citet{tingay2018}, had $\Omega=400$ sq deg and $T=10800$ seconds, and yielded $\log V_{Haystack} =  -17.36$.
 
 By comparison, the wide field optical surveys I have featured all out perform the radio programs explored by \citet{wright2018c} in their Haystack fraction.
-Due to its very wide field coverage, and near continuous monitoring each night, Evryscope ranks as the best optical survey for technosignature searches of those surveyed here. The remarkable similarity in Haystack fraction between Evryscope, which uses 7-cm diameter telescopes, and the 8.4-m LSST survey reinforces the need to sample the Cosmic Haystack volume with as many different survey ``shapes'' as possible.
+Due to its very wide field coverage, and near continuous monitoring each night, Evryscope (abbreviated as ``Evry'' in Figure \ref{fig:hay}) ranks as the best optical survey for technosignature searches of those surveyed here. The remarkable similarity in Haystack fraction between Evryscope, which uses 7-cm diameter telescopes, and the 8.4-m LSST survey reinforces the need to sample the Cosmic Haystack volume with as many different survey ``shapes'' as possible.
 
-While \citet{wright2018c} likened their Haystack fraction to searching for fish in a drinking glass of water compared to the Earth's oceans, our results are closer to 1-2 Olympic sized swimming pools (each 2500 m$^3$, according FINA standards) compared to the Earth's oceans\footnote{Calculation done via Wolfram$|$Alpha}. While optical surveys still only cover a tiny fraction of the total volume of parameter space, it is a substantial improvement.
-
-%Evryscope \citep{law2015} is amazing
-%
-%starting to probe fainter sources becomes a trade off for area and time coverage.
-%Zwicky Transient Facility 
-%for example surveys the sky every couple nights, but with only a single visit per source per night.
-%
-
-%space-based platforms designed for exoplanet searches provide very high quality light curves over months to years timescales. The \Kepler and K2 missions \citep{borucki2010,howell2014} produced 30-minute cadence light curves for $\sim$500,000 stars, with baselines ranging from $\sim$3 months up to 4 years. 
-%, as well as Gaia \citep{gaia} provide incredible precision light curves for millions of stars.
-
-
-
+\citet{wright2018c} likened their Haystack fraction to searching for fish in a drinking glass of water compared to the Earth's oceans,. Our results for SETI with optical surveys are closer to 1-2 Olympic sized swimming pools (each 2500 m$^3$, according FINA standards) compared to the Earth's oceans\footnote{Calculation done via Wolfram$|$Alpha}. While optical surveys still only cover a tiny fraction of the total volume of parameter space, it is a substantial improvement.
 
 
 
@@ -207,7 +194,33 @@ While \citet{wright2018c} likened their Haystack fraction to searching for fish 
 %\section{Example 1: Coordinated Transits as ET Beacons}
 \label{sec:transit}
 
+To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets.
 
+
+
+
+%%%%%%%
+\subsection{Correlated Transits in Kepler}
+we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
+
+we find there is no correlation. Thats OK, but at least we searched
+
+\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
+See also TCE histogram in \citet{twicken2016}
+
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{../figures/delta_per.png}
+\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
+median period differences are computed for bins of separation distance (orange points).
+there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
+\label{fig:2dcor}
+\end{figure}
+
+
+%%%%%%
 \subsection{Coordinated Transit Networks}
 imagine a Type N civilization with the ability to both travel to nearby star systems, and to build large enough structures in orbit around other stars to produce a visible transit in our data.
 
@@ -249,13 +262,13 @@ NOW THE FULL SIMULATION...
 \label{fig:3d}
 \end{figure}
 
-\begin{figure}[]
-\centering
-\includegraphics[width=3in]{../figures/recov_fraction.pdf}
-\caption{fraction of hot Jupiter-like systems recovered in 1000 realizations of our 1000-star simulation. This curve is dependent on the ratio of the occulter-to-star size, and the orbital period range sampled.
-The average from our model is $10\pm 3$ systems recovered for these parameters.}
-\label{fig:recov}
-\end{figure}
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=3in]{../figures/recov_fraction.pdf}
+%\caption{fraction of hot Jupiter-like systems recovered in 1000 realizations of our 1000-star simulation. This curve is dependent on the ratio of the occulter-to-star size, and the orbital period range sampled.
+%The average from our model is $10\pm 3$ systems recovered for these parameters.}
+%\label{fig:recov}
+%\end{figure}
 
 
 IDEA:
@@ -268,36 +281,6 @@ by constraining the inclination to 10deg max, get 4.3\% detection efficiency of 
 PROBLEM:
 as \citet{forgan2017} note, an interstellar communications based on transits may only be stable for $\sim$10,000 years due to evolution of planetary orbits and relative motion between stars within the Milky Way. The beacon systems centered around the host system would have to be traveling as a moving group to maintain their respective trilateration signals, or have the transiting bodies actively over time. In other words, as the beacon systems moved relative to the ET host star due to differing Galactic orbits, the semi-major axis of the transiting bodies would have to be adjusted to compensate.
 
-
-
-%%%%%%%
-\subsection{Searching for Correlated Transits in Kepler}
-we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
-
-we find there is no correlation. Thats OK, but at least we searched
-
-\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
-See also TCE histogram in \citet{twicken2016}
-
-
-
-\begin{figure}[]
-\centering
-\includegraphics[width=3in]{../figures/delta_per.png}
-\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
-median period differences are computed for bins of separation distance (orange points).
-there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
-\label{fig:2dcor}
-\end{figure}
-
-
-
-%\begin{figure}[]
-%\centering
-%\includegraphics[width=3in]{../figures/delta_per2.png}
-%\caption{correlation between transit periods and projected separations, as in Figure \ref{fig:2dcor}, but emphasizing the smallest separations in both axes. One outlier was identified in the similarity of Kepler 1292b and Kepler 1235b (black circle). However, these two systems are more than 600 pc separated in distance.}
-%\label{fig:2dcor2}
-%\end{figure}
 
 
 
