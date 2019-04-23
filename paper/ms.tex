@@ -196,28 +196,44 @@ Due to its very wide field coverage, and near continuous monitoring each night, 
 
 To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets.
 
+trivial example: two point correlation of exoplanets, not substantively different from field stars, so not a total engineering of the Kepler field. OK
 
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=3in]{../figures/2ptcf.pdf}
+\caption{two point correlation function of transiting exoplanets versus all stars in the kepler field. No obvious signs of engineering of the exoplanet population as a whole. exoplanets are actually slightly less correlated on small size scales than stars in general, which may be an artifact of detected planets being around brighter stars in the sample (i.e. having lower total density). 
+While overly simple, this example demonstrates one possible test that could be done using existing and future exoplanet surveys.}
+\label{fig:2pt}
+\end{figure}
 
-%%%%%%%
-%\subsection{Correlated Transits in Kepler}
-we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
+more interesting example: how to stand out in exoplanet signals? if the simplest signal is just to indicate the presence of ET, then Q is how to stand out from the field? one idea is a spatial correlation of some exoplanet property, such as radius, eclipse depth, or orbital period. here i propose we search for spatial clusters of exoplanets with unusually similar orbital periods.
 
-we find there is no correlation. Thats OK, but at least we searched
+to make an ideal transmitter of such a signal, the Q's are: what period to use, and how many systems need to be detected as similar to be confident something is odd about them? the first Q a civilization might consider either periods that are unusual (long P i think, look at population histogram). But to build such a beacon, might be efficient to balance with detectability since several systems must be detected to stand out, so short orbital period is probably best (easiest to detect). 
+
+the second Q is akin to a loaded dice problem (i.e. how many rolls do you need to tell a die isnt rolling fair). The odds of a single random transiting system being a given period is just a random draw from the underlying population, so the height of a bin in the normalized distribution. The odds of N draws is equivalent to multiplying the normalized distribution by itself N times. So looking at a new Figure i'm going to make, we need 4 (?) systems to be within the same bin to be highly unusual... use this to drive choice of N, and for a given result (if positive) estimate the probability
+
+so for every planet in Kepler, I'll measure the.... stddev? sum of sq differences? some metric of "sameness"
+of the 4 (?) nearest exoplanets.
+then the Q is what's the  99\% outlier for the sameness distribution?
+choosing to do this simple numerical approach since the data are noisy, no way to exactly have ``same'' period....
+
+probably find no candidates, but that'll be AOK since the odds of 4 draws having exact same period should be very low.
+
 
 %\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
 %See also TCE histogram in \citet{twicken2016}
 
 
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=3in]{../figures/delta_per.png}
-\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
-median period differences are computed for bins of separation distance (orange points).
-there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
-\label{fig:2dcor}
-\end{figure}
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=3in]{../figures/delta_per.png}
+%\caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
+%median period differences are computed for bins of separation distance (orange points).
+%there is no trend in these medians, indicating a distribution of orbital periods that are random on large scales.}
+%\label{fig:2dcor}
+%\end{figure}
 
 
 %%%%%% 
