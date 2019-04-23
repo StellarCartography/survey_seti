@@ -200,17 +200,17 @@ To illustrate the potential for possible technosignature searches in the spatial
 
 
 %%%%%%%
-\subsection{Correlated Transits in Kepler}
+%\subsection{Correlated Transits in Kepler}
 we compute the 2-point correlation between all transits in the Kepler sample in 2D space (radius)
 
 we find there is no correlation. Thats OK, but at least we searched
 
-\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
-See also TCE histogram in \citet{twicken2016}
+%\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
+%See also TCE histogram in \citet{twicken2016}
 
 
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=3in]{../figures/delta_per.png}
 \caption{searching for correlation between transit periods and projected separations between all exoplanet systems out to 2deg in the Kepler data. 
@@ -220,67 +220,59 @@ there is no trend in these medians, indicating a distribution of orbital periods
 \end{figure}
 
 
-%%%%%%
-\subsection{Coordinated Transit Networks}
-imagine a Type N civilization with the ability to both travel to nearby star systems, and to build large enough structures in orbit around other stars to produce a visible transit in our data.
-
-give the detailed example i have thought up.
-
-becons placed at distances
-
-
-\begin{figure*}[]
-\centering
-\includegraphics[width=2.75in]{../figures/dist_per.pdf}
-\includegraphics[width=2.75in]{../figures/sky_per.pdf}
-\caption{schematic figure of the signal to detect in 2 dimensions. ra,dec in arbitrary units. red circle in middle is the home system}
-\label{fig:2d}
-\end{figure*}
-
-
-for clarity, this is what the ideal signal might look like on the sky
-
-
-%%%
-
-this type of beacon network is advantageous because it points directly back towards their home. only a few systems actually need to be transiting from any given line of sight.
-
-NOW THE FULL SIMULATION...
-- computation to do: if had 100 beacons, each placed at random orbital alignment, in 3d sphere around home system.
-- assume G stars, 
-- odds of observing transit of a fixed sized object versus orbital distance... goes down. need that plot to figure out probability. 
-- assume ET places beacons with uniform RADIAL density in 3d space out to some maximum distance (even \# of systems as function of radial distance) in bins of 10pc out to 100 pc (i.e. 10 beacons in each 10pc bin)
-- orbital period is exact for each system, no bins of period
-- do Monte Carlo sim with these parameters to figure out how many transiting systems we'd observe 
-
----- make the plot for one MC realization of RA,Dec.... open circles for systems with no observed transits, colored for transits
-
-\begin{figure}[]
-\centering
-\includegraphics[width=3in]{../figures/3d_model.pdf}
-\caption{the model in 3 dimensions projected into the sky plane. 1000 simulated systems that span the galactic distance of 5-50 pc (blue) with 10 recovered transits highlighted (red). these would be hot Jupiters at the short P end.}
-\label{fig:3d}
-\end{figure}
-
+%%%%%% 
+%    > shelve this idea for now, maybe another paper.... 1 demo is enough for this paper, 
+%    and it should be actually computed/worked out.
+%%%%%% 
+%\subsection{Coordinated Transit Networks}
+%imagine a Type N civilization with the ability to both travel to nearby star systems, and to build large enough structures in orbit around other stars to produce a visible transit in our data.
+%
+%give the detailed example i have thought up.
+%
+%becons placed at distances
+%
+%\begin{figure*}[]
+%\centering
+%\includegraphics[width=2.75in]{../figures/dist_per.pdf}
+%\includegraphics[width=2.75in]{../figures/sky_per.pdf}
+%\caption{schematic figure of the signal to detect in 2 dimensions. ra,dec in arbitrary units. red circle in middle is the home system}
+%\label{fig:2d}
+%\end{figure*}
+%
+%
+%for clarity, this is what the ideal signal might look like on the sky
+%
+%
+%this type of beacon network is advantageous because it points directly back towards their home. only a few systems actually need to be transiting from any given line of sight.
+%
+%NOW THE FULL SIMULATION...
+%- computation to do: if had 100 beacons, each placed at random orbital alignment, in 3d sphere around home system.
+%- assume G stars, 
+%- odds of observing transit of a fixed sized object versus orbital distance... goes down. need that plot to figure out probability. 
+%- assume ET places beacons with uniform RADIAL density in 3d space out to some maximum distance (even \# of systems as function of radial distance) in bins of 10pc out to 100 pc (i.e. 10 beacons in each 10pc bin)
+%- orbital period is exact for each system, no bins of period
+%- do Monte Carlo sim with these parameters to figure out how many transiting systems we'd observe 
+%
+%---- make the plot for one MC realization of RA,Dec.... open circles for systems with no observed transits, colored for transits
+%
 %\begin{figure}[]
 %\centering
-%\includegraphics[width=3in]{../figures/recov_fraction.pdf}
-%\caption{fraction of hot Jupiter-like systems recovered in 1000 realizations of our 1000-star simulation. This curve is dependent on the ratio of the occulter-to-star size, and the orbital period range sampled.
-%The average from our model is $10\pm 3$ systems recovered for these parameters.}
-%\label{fig:recov}
+%\includegraphics[width=3in]{../figures/3d_model.pdf}
+%\caption{the model in 3 dimensions projected into the sky plane. 1000 simulated systems that span the galactic distance of 5-50 pc (blue) with 10 recovered transits highlighted (red). these would be hot Jupiters at the short P end.}
+%\label{fig:3d}
 %\end{figure}
-
-
-IDEA:
-could improve the efficiency of these beacons if we consider a bit of galactic structure, aligning the median orbital inclinations of the beacon systems with the Galactic plane, and only allowing a smaller range of possible inclinations. How much more efficient would it be if we forced $i<10^\circ$, instead of $i<90^\circ$?
-
-for a million system model w/ 90deg max, 0.46\% total detection efficiency. 
-by constraining the inclination to 10deg max, get 4.3\% detection efficiency of planets. 30deg max gets 1.4\%
-
-
-PROBLEM:
-as \citet{forgan2017} note, an interstellar communications based on transits may only be stable for $\sim$10,000 years due to evolution of planetary orbits and relative motion between stars within the Milky Way. The beacon systems centered around the host system would have to be traveling as a moving group to maintain their respective trilateration signals, or have the transiting bodies actively over time. In other words, as the beacon systems moved relative to the ET host star due to differing Galactic orbits, the semi-major axis of the transiting bodies would have to be adjusted to compensate.
-
+%
+%
+%IDEA:
+%could improve the efficiency of these beacons if we consider a bit of galactic structure, aligning the median orbital inclinations of the beacon systems with the Galactic plane, and only allowing a smaller range of possible inclinations. How much more efficient would it be if we forced $i<10^\circ$, instead of $i<90^\circ$?
+%
+%for a million system model w/ 90deg max, 0.46\% total detection efficiency. 
+%by constraining the inclination to 10deg max, get 4.3\% detection efficiency of planets. 30deg max gets 1.4\%
+%
+%
+%PROBLEM:
+%as \citet{forgan2017} note, an interstellar communications based on transits may only be stable for $\sim$10,000 years due to evolution of planetary orbits and relative motion between stars within the Milky Way. The beacon systems centered around the host system would have to be traveling as a moving group to maintain their respective trilateration signals, or have the transiting bodies actively over time. In other words, as the beacon systems moved relative to the ET host star due to differing Galactic orbits, the semi-major axis of the transiting bodies would have to be adjusted to compensate.
+%
 
 
 
