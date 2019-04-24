@@ -143,9 +143,9 @@ Here I describe a few general classes of technosignature signals that may be wel
 %
 \item {\bf Spatial correlations of events or phenomena }-- e.g. coordination of transiting systems, or rebroadcasting events such as novae along the ``SETI ellipse'' \citep{makovetskii1977,lemarchand1994,tarter2001,shostak2004}
 %
-\item {\bf Spatial over-density or distribution} -- e.g. an over-density of a given phenomena, such as within the Earth Transit Zone \citep{heller2016}
+\item {\bf Spatial over-density or distribution} -- e.g. an over-density of a given phenomena, such as within the Earth Transit Zone \citep{heller2016}, or in spatial clusters
 %
-\item {\bf Unnatural patterns} -- particularly patterns of otherwise normal astrophysical variability, such as broadcasting a prime or fibonacci sequence of transits \citep{wright2016}.
+\item {\bf Unnatural patterns} -- particularly patterns of otherwise normal astrophysical variability, such as broadcasting a prime or fibonacci sequence of transits \citep{arnold2005,wright2016}.
 %
 \end{enumerate}
 
@@ -190,16 +190,22 @@ Due to its very wide field coverage, and near continuous monitoring each night, 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Example: Spatial-Temporal\\ Transit Beacons}
+\section{Example: Distribution of Transiting Exoplanets in the {\it Kepler} Field}
 %\section{Example 1: Coordinated Transits as ET Beacons}
 \label{sec:transit}
 
-To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets.
+To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets. Transits are a promising target for SETI since they are relatively efficient to find over wide areas with surveys like \Kepler \citep{borucki2010} or TESS, and they represent a natural ``Schelling point'' to attract attention with \citep{wright2017}. Creating such a beacon requires either generating a transiting system with unusual properties or patterns \citep[e.g.][]{arnold2005,kipping2016,forgan2017}, or as outlined in \S\ref{sec:strategy} an unusual {\it distribution} of transiting systems. The two examples outlined here explore the latter scenario, though I note the former is also well suited to automated approaches that would make use of future surveys and should be developed further.
 
-trivial example: two point correlation of exoplanets, not substantively different from field stars, so not a total engineering of the Kepler field. OK
+%__________
+\subsection{Two-Point Correlation Function}
+
+\citep{landy1993}
+
+trivial example: two point correlation of exoplanets, Figure \ref{fig:2pt}
+ not substantively different from field stars, so not a total engineering of the Kepler field. OK however note the selection function of these two populations is not exactly the same, so this can be a tricky metric to  use. considerable effort to ensure well understood sample and biases from non-uniform spatial selection, even in ``simple'' scenarios of galaxy populations in well-studied surveys \citep[e.g.][]{wang2013}. also requires large samples (like with simple spatial overdensities) to determine if something is unusual. This makes it an expensive beacon to create
 
 
-\begin{figure}[!h]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{../figures/2ptcf.pdf}
 \caption{two point correlation function of transiting exoplanets versus all stars in the kepler field. No obvious signs of engineering of the exoplanet population as a whole. exoplanets are actually slightly less correlated on small size scales than stars in general, which may be an artifact of detected planets being around brighter stars in the sample (i.e. having lower total density). 
@@ -207,6 +213,9 @@ While overly simple, this example demonstrates one possible test that could be d
 \label{fig:2pt}
 \end{figure}
 
+
+%__________
+\subsection{Clusters of Similarity}
 more interesting example: how to stand out in exoplanet signals? if the simplest signal is just to indicate the presence of ET, then Q is how to stand out from the field? one idea is a spatial correlation of some exoplanet property, such as radius, eclipse depth, or orbital period. here i propose we search for spatial clusters of exoplanets with unusually similar orbital periods.
 
 to make an ideal transmitter of such a signal, the Q's are: what period to use, and how many systems need to be detected as similar to be confident something is odd about them? the first Q a civilization might consider either periods that are unusual (long P i think, look at population histogram). But to build such a beacon, might be efficient to balance with detectability since several systems must be detected to stand out, so short orbital period is probably best (easiest to detect). 
@@ -219,6 +228,16 @@ then the Q is what's the  99\% outlier for the sameness distribution?
 choosing to do this simple numerical approach since the data are noisy, no way to exactly have ``same'' period....
 
 probably find no candidates, but that'll be AOK since the odds of 4 draws having exact same period should be very low.
+
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{../figures/Kplanets.pdf}
+\caption{Spread in orbital periods for KNN clusters of exoplanet systems in \Kepler versus the average angular separation of the cluster. For $K=3$, 5 clusters have a spread in their periods below 6\% (red points). These KNN clusters have typical spatial separations of $\sim$0.1 deg.}
+\label{fig:knn}
+\end{figure}
+
 
 
 %\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
