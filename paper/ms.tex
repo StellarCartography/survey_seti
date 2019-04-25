@@ -157,10 +157,16 @@ Due to its very wide field coverage, and near continuous monitoring each night, 
 
 To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets. Transits are a promising target for SETI since they are relatively efficient to find over wide areas with surveys like \Kepler \citep{borucki2010} or TESS, and they represent a natural ``Schelling point'' to attract attention with \citep{wright2017}. Creating such a beacon requires either generating a transiting system with unusual properties or patterns \citep[e.g.][]{arnold2005,kipping2016,forgan2017}, or as outlined in \S\ref{sec:strategy} an unusual {\it distribution} of transiting systems. The two examples outlined here explore the latter scenario, though I note the former is also well suited to automated approaches that would make use of future surveys and should be developed further.
 
+
 %__________
 \subsection{Two-Point Correlation Function}
 
-\citep{landy1993}
+The easiest conceptual method to search for a technosignature beacon in the spatial distribution of exoplanets would be looking for over-densities, i.e. regions with an unusually large number of transiting systems. However this requires a large and very uniform sampling of exoplanets per square degree to determine if the density is unusual. Such spatially uniform samples are difficult to achieve since e.g. bright stars can saturate large regions.
+
+
+Another simple statistical test is to measure the distribution of exoplanet systems using the two-point angular correlation function \citep{landy1993}. This method measures the probability of finding two sources separated by a given radial distance, and is often used in cosmology to characterize the distribution of galaxies on cosmological scales,. The two-point correlation function is easily measured thanks to generalized functions from packages such as {\tt astroML} \citep{astroMLText}, and  more efficient approaches have been produced that can scale to very large datasets \citep[e.g.][]{wang2013}.
+
+In Figure \ref{fig:2pt} I show the two-point correlation function for a sample of 
 
 trivial example: two point correlation of exoplanets, Figure \ref{fig:2pt}
  not substantively different from field stars, so not a total engineering of the Kepler field. OK however note the selection function of these two populations is not exactly the same, so this can be a tricky metric to  use. considerable effort to ensure well understood sample and biases from non-uniform spatial selection, even in ``simple'' scenarios of galaxy populations in well-studied surveys \citep[e.g.][]{wang2013}. also requires large samples (like with simple spatial overdensities) to determine if something is unusual. This makes it an expensive beacon to create
@@ -262,6 +268,11 @@ The cost of deploying such SETI is remarkably low, since they can ``piggyback'' 
 J.R.A.D. thanks Nicholas M. Law and Jason T. Wright for their helpful ongoing conversations in developing this idea, and Andrew P. V. Siemion and the Berkeley SETI Research Center team for hosting me for an enlightening and motivating visit.
 
 J.R.A.D. acknowledges support from the DIRAC Institute in the Department of Astronomy at the University of Washington. The DIRAC Institute is supported through generous gifts from the Charles and Lisa Simonyi Fund for Arts and Sciences, and the Washington Research Foundation.
+
+This paper includes data collected by the Kepler mission. Funding for the Kepler mission is provided by the NASA Science Mission directorate.
+
+This research has made use of the NASA Exoplanet Archive, which is operated by the California Institute of Technology, under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program.
+
 
 \bibliography{/Users/james/Dropbox/references}
 
