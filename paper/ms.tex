@@ -166,9 +166,9 @@ The easiest conceptual method to search for a technosignature beacon in the spat
 
 Another simple statistical test is to measure the distribution of exoplanet systems using the two-point angular correlation function \citep{landy1993}. This method measures the probability of finding two sources separated by a given radial distance, and is often used in cosmology to characterize the distribution of galaxies on cosmological scales,. The two-point correlation function is easily measured thanks to generalized functions from packages such as {\tt astroML} \citep{astroMLText}, and  more efficient approaches have been produced that can scale to very large datasets \citep[e.g.][]{wang2013}.
 
-In Figure \ref{fig:2pt} I show the two-point correlation function for a sample of 
+In Figure \ref{fig:2pt} I show the two-point correlation function up to spatial scales of 5 degrees for both the sample of 2,324 transiting exoplanets discovered by the \Kepler primary mission,\footnote{Catalog from \url{http://exoplanetarchive.ipac.caltech.edu}} and for 201,312 stars in the \Kepler field. Since the sample of exoplanets was relatively small, uncertainties shown in Figure \ref{fig:2pt} were estimated by bootstrapping the correlation function 500 times. Here the correlation was done using only the (ra,dec) coordinates for each star or exoplanet system, but can also be done for additional dimensions (e.g. including distance, orbital properties, etc).
 
-trivial example: two point correlation of exoplanets, Figure \ref{fig:2pt}
+%trivial example: two point correlation of exoplanets, Figure \ref{fig:2pt}
  not substantively different from field stars, so not a total engineering of the Kepler field. OK however note the selection function of these two populations is not exactly the same, so this can be a tricky metric to  use. considerable effort to ensure well understood sample and biases from non-uniform spatial selection, even in ``simple'' scenarios of galaxy populations in well-studied surveys \citep[e.g.][]{wang2013}. also requires large samples (like with simple spatial overdensities) to determine if something is unusual. This makes it an expensive beacon to create
 
 
@@ -273,6 +273,7 @@ This paper includes data collected by the Kepler mission. Funding for the Kepler
 
 This research has made use of the NASA Exoplanet Archive, which is operated by the California Institute of Technology, under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program.
 
+This work made use of the gaia-kepler.fun crossmatch database created by Megan Bedell.
 
 \bibliography{/Users/james/Dropbox/references}
 
