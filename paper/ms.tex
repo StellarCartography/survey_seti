@@ -181,20 +181,27 @@ While overly simple, this example demonstrates one possible test that could be d
 \end{figure}
 
 
+
 %__________
 \subsection{Clusters of Similarity}
-more interesting example: how to stand out in exoplanet signals? if the simplest signal is just to indicate the presence of ET, then Q is how to stand out from the field? one idea is a spatial correlation of some exoplanet property, such as radius, eclipse depth, or orbital period. here i propose we search for spatial clusters of exoplanets with unusually similar orbital periods.
 
-to make an ideal transmitter of such a signal, the Q's are: what period to use, and how many systems need to be detected as similar to be confident something is odd about them? the first Q a civilization might consider either periods that are unusual (long P i think, look at population histogram). But to build such a beacon, might be efficient to balance with detectability since several systems must be detected to stand out, so short orbital period is probably best (easiest to detect). 
+Rather than searching for an exoplanet beacon of outliers of systems in spatial density or distribution, we can consider clusters of systems that are unusually similar in some way. In the simplest case this could take the form of a cluster of transiting exoplanets with the same radius, transit depth, transit ephemeris (or transit midpoint), or orbital period, for example. Here I demonstrate a simple algorithm for searching for clusters of exoplanets with unusually similar orbital periods.
 
-the second Q is akin to a loaded dice problem (i.e. how many rolls do you need to tell a die isnt rolling fair). The odds of a single random transiting system being a given period is just a random draw from the underlying population, so the height of a bin in the normalized distribution. The odds of N draws is equivalent to multiplying the normalized distribution by itself N times. So looking at a new Figure i'm going to make, we need 4 (?) systems to be within the same bin to be highly unusual... use this to drive choice of N, and for a given result (if positive) estimate the probability
 
-so for every planet in Kepler, I'll measure the.... stddev? sum of sq differences? some metric of "sameness"
-of the 4 (?) nearest exoplanets.
-then the Q is what's the  99\% outlier for the sameness distribution?
-choosing to do this simple numerical approach since the data are noisy, no way to exactly have ``same'' period....
+two questions arise: 
+- how many systems to use as a cluster, and how spatially tight should they be?
+- which periods and how self-similar do they need to be?
 
-probably find no candidates, but that'll be AOK since the odds of 4 draws having exact same period should be very low.
+
+%to make an ideal transmitter of such a signal, the Q's are: what period to use, and how many systems need to be detected as similar to be confident something is odd about them? the first Q a civilization might consider either periods that are unusual (long P i think, look at population histogram). But to build such a beacon, might be efficient to balance with detectability since several systems must be detected to stand out, so short orbital period is probably best (easiest to detect). 
+
+%the second Q is akin to a loaded dice problem (i.e. how many rolls do you need to tell a die isnt rolling fair). The odds of a single random transiting system being a given period is just a random draw from the underlying population, so the height of a bin in the normalized distribution. The odds of N draws is equivalent to multiplying the normalized distribution by itself N times. So looking at a new Figure i'm going to make, we need 4 (?) systems to be within the same bin to be highly unusual... use this to drive choice of N, and for a given result (if positive) estimate the probability
+
+%so for every planet in Kepler, I'll measure the.... stddev? sum of sq differences? some metric of "sameness"
+%of the 4 (?) nearest exoplanets.
+%then the Q is what's the  99\% outlier for the sameness distribution?
+%choosing to do this simple numerical approach since the data are noisy, no way to exactly have ``same'' period....
+%probably find no candidates, but that'll be AOK since the odds of 4 draws having exact same period should be very low.
 
 
 
