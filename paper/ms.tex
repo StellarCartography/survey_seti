@@ -14,7 +14,7 @@
 
 % make the word Kepler italicized
 \newcommand{\Kepler}{\textsl{Kepler}\xspace}
-
+\newcommand{\TESS}{\textsl{TESS}\xspace}
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%
@@ -127,7 +127,7 @@ For typical optical surveys using broadband photometry \citep{djorgovski2013}, t
 Since these terms all act as scalers in the Haystack volume integration, surveys with different properties (e.g. few deep exposures versus many shallow exposures) can have comparably large Haystack coverage, filling out very different portions of the search volume. For maximum impact, SETI should therefore be conducted on many types of surveys.
 %we need to be looking at big optical surveys, since they provide such amazing sky/time coverage
 
-As a demonstration, I have computed the Cosmic Haystack volume coverage for five representative current and future optical time domain surveys, as shown in Figure \ref{fig:hay}. This includes the Catalina Real Time Transient Survey \citep[CRTS;][]{catalina}, Zwicky Transient Facility \citep[ZTF;][]{bellm2014}, the Transiting Exoplanet Survey Satellite \citep[TESS;][]{tess}, the Large Synoptic Survey Telescope \citep[LSST;][]{lsst}, and the Evryscope \citep{law2015}. These include space-based and traditional ground-based surveys, and vary greatly in telescope collecting area, total numbers of visits, and survey footprint design. 
+As a demonstration, I have computed the Cosmic Haystack volume coverage for five representative current and future optical time domain surveys, as shown in Figure \ref{fig:hay}. This includes the Catalina Real Time Transient Survey \citep[CRTS;][]{catalina}, Zwicky Transient Facility \citep[ZTF;][]{bellm2014}, the Transiting Exoplanet Survey Satellite \citep[\TESS;][]{tess}, the Large Synoptic Survey Telescope \citep[LSST;][]{lsst}, and the Evryscope \citep{law2015}. These include space-based and traditional ground-based surveys, and vary greatly in telescope collecting area, total numbers of visits, and survey footprint design. 
 I have assumed sensitivity ($S$) is the published per-visit photometric depth for each survey. The total integration time per target ($T$) was computed as the average number of visits per target in the survey multiplied by the per-visit exposure time. The same power of transmitter is assumed as in \citet{wright2018c}. 
 The code to generate the figures in this manuscript is online.\footnote{\url{https://github.com/TheAstroFactory/survey_seti}}
 
@@ -156,7 +156,7 @@ Due to its very wide field coverage, and near continuous monitoring each night, 
 \section{Example: Distribution of Transiting Exoplanets in the {\it Kepler} Field}
 \label{sec:transit}
 
-To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets. Transits are a promising target for SETI since they are relatively efficient to find over wide areas with surveys like \Kepler \citep{borucki2010} or TESS, and they represent a natural ``Schelling point'' to attract attention with \citep{wright2017}. Creating such a beacon requires either generating a transiting system with unusual properties or patterns \citep[e.g.][]{arnold2005,kipping2016,forgan2017}, or as outlined in \S\ref{sec:strategy} an unusual {\it distribution} of transiting systems. The two examples outlined here explore the latter scenario, though I note the former is also well suited to automated approaches that would make use of future surveys and should be developed further. While I do not advocate these specific metrics are ideal for SETI, they demonstrate the type of signals we should design software systems to find in modern surveys.
+To illustrate the potential for possible technosignature searches in the spatial-temporal survey domain, in this section I demonstrate two examples of signals that rely on samples of transiting exoplanets. Transits are a promising target for SETI since they are relatively efficient to find over wide areas with surveys like \Kepler \citep{borucki2010} or \TESS, and they represent a natural ``Schelling point'' to attract attention with \citep{wright2017}. Creating such a beacon requires either generating a transiting system with unusual properties or patterns \citep[e.g.][]{arnold2005,kipping2016,forgan2017}, or as outlined in \S\ref{sec:strategy} an unusual {\it distribution} of transiting systems. The two examples outlined here explore the latter scenario, though I note the former is also well suited to automated approaches that would make use of future surveys and should be developed further. While I do not advocate these specific metrics are ideal for SETI, they demonstrate the type of signals we should design software systems to find in modern surveys.
 
 
 %__________
@@ -188,7 +188,7 @@ The correlation functions shown in Figure \ref{fig:2pt} are not substantively di
 %__________
 \subsection{Clusters of Similarity}
 
-Rather than searching for an exoplanet beacon consisting of outliers in spatial density or distribution (e.g. \S\ref{sec:2pt}), we can consider clusters of systems that are unusually similar in some way. In the simplest case this could take the form of a group of closely clustered stars with transiting exoplanets with the same radius, transit depth, transit ephemeris (or transit midpoint), or orbital period, for example. The assumption here is that a civilization would have engineered this unusual set of transiting systems in order to be noticed by early astronomers (us) hoping to characterize the exoplanet demographics of our Galaxy.
+Rather than searching for an exoplanet beacon consisting of outliers in spatial density or distribution (e.g. \S\ref{sec:2pt}), we can consider groups of systems that are unusually similar in some way. In the simplest case this could take the form of many closely clustered stars with transiting exoplanets, where each planet had the same radius, transit depth, transit ephemeris (or transit midpoint), or orbital period, for example. The assumption here is that a civilization would have engineered this unlikely set of transiting systems, like a lighthouse, in order to be noticed by early astronomers (us) hoping to characterize the exoplanet demographics of our Galaxy. This SETI approach relies on both the spatial and temporal information contained in exoplanet-hunting surveys like \Kepler or \TESS.
 Here I demonstrate a simple algorithm for searching for such clusters of exoplanets with unusually similar orbital periods.
 
 
@@ -196,7 +196,13 @@ Here I demonstrate a simple algorithm for searching for such clusters of exoplan
 %- how many systems to use as a cluster, and how spatially tight should they be?
 %- which periods and how self-similar do they need to be?
 
-make clusters using easy KNN algorithm
+As with many proposed technosignature signals, the key to this spatially distributed beacon system being effective is that the similarity metric for the cluster of stars must be substantially outside the realm of possible values that nature can produce. A civilization constructing such a beacon would also need to be aware of the natural distribution of exoplanet periods in order to determine the precision needed to place their transiting bodies. Thus we don't have to arbitrarily choose which orbital periods are interesting to search over or how close in period they need to be to count as a technosignature candidate, but instead we can adopt a data-driven approach where our thresholds are empirically set based on a probability threshold. 
+
+For this demonstration I selected the same sample of 2,324 known transiting exoplanet systems within the \Kepler field used in \S\ref{sec:2pt}, with orbital periods ranging from 0.35 days to 1,322.5 days. 
+I used the NearestNeighbor clustering algorithm in {\tt scikit-learn} for $k=3$ to easily identify and compute the projected angular distances between the nearest stars for each of the 2,324 exoplanet systems (i.e. an exoplanet and its two nearest neighbors). Even using the ``brute force'' algorithm, this clustering takes less than 1 second to compute for such small samples of objects. Since many of the exoplanets in the sample reside in multi-planet systems, the NearestNeighbor algorithm will produce clusters with multiple object separations of exactly zero. I therefore further restricted my sample to clusters that contain no multi-planet systems, leaving a total of 1,217 clusters constructed of three single transiting systems. Note also that due to the uniform but stochastic sampling of exoplanet systems across the field (see \S\ref{sec:2pt}), some clusters are partially or fully redundant (i.e. the same three stars can be selected in differing orders in up to three separate clusters). I do not resolve this redundancy in this demonstration.
+
+For each $k=3$ star cluster I compute two metrics that should be considered when searching  for these spatially distributed beacons, shown in Figure \ref{fig:knn}. First I simply calculate the mean cartesian distance of the three exoplanet  systems about the ``center'' or average spatial position. This enables us to potentially identify clusters of transiting systems that are unusually close together. Second I compute the similarity of the orbital periods for the three exoplanets in each clusters. This similarity metric here is defined as the range (i.e. max period -- min period) divided by the mean orbital period of the three stars.
+This period metric is easy to interpret, allowing us to identify clusters of transiting exoplanets whose orbital periods deviate by less than a given percentage.
 
 %to make an ideal transmitter of such a signal, the Q's are: what period to use, and how many systems need to be detected as similar to be confident something is odd about them? the first Q a civilization might consider either periods that are unusual (long P i think, look at population histogram). But to build such a beacon, might be efficient to balance with detectability since several systems must be detected to stand out, so short orbital period is probably best (easiest to detect). 
 
@@ -213,10 +219,12 @@ make clusters using easy KNN algorithm
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{../figures/Kplanets.pdf}
-\caption{Fractional range of orbital periods versus the mean angular separation for KNN clusters in (ra, dec) space of transiting exoplanet systems in \Kepler. This sample only includes systems with only a single known transiting exoplanet. These KNN clusters have typical spatial separations of $\sim$0.1 deg. For $K$=3, five clusters have a spread in their orbital periods below 6\% (red points), but are not unusually close together in spatial separation.}
+\caption{Fractional range of orbital periods versus the mean angular separation for KNN clusters in (ra, dec) space of transiting exoplanet systems in \Kepler. This sample only includes systems with only a single known transiting exoplanet. These KNN clusters have typical spatial separations of $\sim$0.1 deg. For $K$=3, three unique clusters have a spread in their orbital periods below 6\% (red points). However this is not a significant outlier in the orbital period similarity, and these clusters are not unusually close together in their spatial separation.}
 \label{fig:knn}
 \end{figure}
 
+
+We find no anonymously self-similar clusters of exoplanets in the \Kepler sample considered here. The cluster with the most similar period distribution consists of Kepler-1295, Kepler-1612, and Kepler-612. This triplet of systems have orbital periods within 5.1\% of each other (mean period of $P=3.82$ days).
 
 
 %\citet{coughlin2014} find some correlations that are apparently removed in KOI catalog creation... due to contamination by RRlyr or other thing?
@@ -236,6 +244,7 @@ make clusters using easy KNN algorithm
 %
 %this kind of distributed network could be very efficient at broadcasting the presence of a civilization. dust clouds could create sufficient "transit" signals, while not affecting orbital dynamics
 
+while i've used self-similarity of clusters as the search metric here, we could instead pick densities of the most unlikely systems. Since long-period eclipses are geometrically the most rare, a spatial cluster of such exoplanets should immediately stand out as being very unlikely. However, these systems are also the most time-intensive to detect for an observer, and so I argue a more efficient beacon would be constructed of short-period eclipses. Adding the long-period or most unlikely cluster-finding algorithm to a future survey SETI toolkit is straightforward, however.
 
 so far we have focused on the need for developing SETI approaches that utilize the new spatial-temporal domain. The data streams from these surveys also enable many other search strategies that could be implemented. these might include:
 VASCO-type events, stars appearing or disappearing. \citep{villarroel2016}
@@ -277,7 +286,7 @@ The cost of deploying such SETI is remarkably low, since they can ``piggyback'' 
 %%%%%%%%%%%%%%%%%
 \acknowledgments
 
-J.R.A.D. thanks Nicholas M. Law and Jason T. Wright for their helpful ongoing conversations in developing this idea, and Andrew P. V. Siemion and the Berkeley SETI Research Center team for hosting me for an enlightening and motivating visit.
+J.R.A.D. thanks Nicholas M. Law and Jason T. Wright for their helpful ongoing conversations in developing this idea, and Andrew P. V. Siemion and the Berkeley SETI Research Center team for hosting me for an enlightening and motivating visit, and the Research Corporation for Scientific Advancement for hosting the 2018 TDA Scialog meeting.
 
 J.R.A.D. acknowledges support from the DIRAC Institute in the Department of Astronomy at the University of Washington. The DIRAC Institute is supported through generous gifts from the Charles and Lisa Simonyi Fund for Arts and Sciences, and the Washington Research Foundation.
 
